@@ -6,7 +6,7 @@
     <title>Hongrui Zhu | Personal Website</title>
     <meta
             name="description"
-            content="Hongrui Zhu - Master Student at Stony Brook University. Research interests in [[YOUR_RESEARCH_AREA_1]], [[YOUR_RESEARCH_AREA_2]], and [[YOUR_RESEARCH_AREA_3]]."
+            content="Hongrui Zhu - M.S. Student in Biomedical Informatics at Stony Brook University. Research interests in computational pathology, computer vision, and biomedical image analysis."
     />
     <style>
         :root {
@@ -257,10 +257,14 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 22px;
+            align-items: stretch;
         }
 
         .project-card {
             padding: 24px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-card h3 {
@@ -379,6 +383,7 @@
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
             <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
         </div>
@@ -388,23 +393,22 @@
 <header class="hero">
     <div class="container hero-grid">
         <div class="card hero-main">
-            <div class="hero-tag">[[YOUR_SHORT_TAGLINE]]</div>
+            <div class="hero-tag">Biomedical Informatics | Computer Vision | Medical Image Analysis</div>
             <h1>Hi, I'm Hongrui Zhu.</h1>
             <p class="hero-subtitle">
-                I'm a Master Student at Stony Brook University with interests in
-                [[YOUR_RESEARCH_AREA_1]], [[YOUR_RESEARCH_AREA_2]], and [[YOUR_RESEARCH_AREA_3]].
-                My work focuses on building practical and research-oriented computational methods
-                for [[YOUR_APPLICATION_DOMAIN]].
+                I'm a Master's student at Stony Brook University specializing in computer vision, computational
+                pathology, and biomedical image analysis. I focus on building practical and research-driven solutions
+                for real-world medical and biological applications.
             </p>
             <p class="hero-subtitle">
-                I am currently working on [[YOUR_CURRENT_FOCUS_1]] and [[YOUR_CURRENT_FOCUS_2]],
-                and I am actively seeking opportunities in [[YOUR_TARGET_OPPORTUNITY_TYPE]].
+                I am actively seeking internships and full-time opportunities in AI, machine learning, and data
+                analysis.
             </p>
             <div class="hero-actions">
                 <a class="btn btn-primary" href="[[YOUR_RESUME_LINK]]" target="_blank">View Resume</a>
                 <a class="btn btn-secondary" href="#projects">View Projects</a>
-                <a class="btn btn-secondary" href="[[YOUR_GITHUB_LINK]]" target="_blank">GitHub</a>
-                <a class="btn btn-secondary" href="[[YOUR_LINKEDIN_LINK]]" target="_blank">LinkedIn</a>
+                <a class="btn btn-secondary" href="https://github.com/BlackOrnate" target="_blank">GitHub</a>
+                <a class="btn btn-secondary" href="https://www.linkedin.com/in/hongruizhu/" target="_blank">LinkedIn</a>
             </div>
         </div>
 
@@ -419,11 +423,13 @@
             </div>
             <div class="stat-box">
                 <div class="stat-label">Research Focus</div>
-                <div class="stat-value">[[YOUR_MAIN_RESEARCH_FOCUS]]</div>
+                <div class="stat-value">Computer Vision for Biomedical Images</div>
             </div>
             <div class="stat-box">
                 <div class="stat-label">Currently Open To</div>
-                <div class="stat-value">[[YOUR_TARGET_OPPORTUNITY_TYPE]]</div>
+                <div class="stat-value">Internships and full-time opportunities in AI, machine learning, and and data
+                    analysis.
+                </div>
             </div>
         </div>
     </div>
@@ -434,36 +440,51 @@
         <div class="card about-card">
             <h2 class="section-title">About Me</h2>
             <p class="section-desc">
-                [[ABOUT_ME_PARAGRAPH_1]]
+                I am a Master's student in Biomedical Informatics at Stony Brook University, with a strong background in
+                Applied Mathematics and Software Engineering. My research interests focus on computer vision,
+                computational pathology, and biomedical image analysis, where I aim to develop data-driven solutions for
+                real-world medical and biological problems.
             </p>
             <p class="section-desc">
-                [[ABOUT_ME_PARAGRAPH_2]]
+                I have experience in building deep learning models for image segmentation and classification, including
+                nuclei segmentation on the PanNuke dataset and pathology image analysis on NYBB data. Recently, I have
+                been working on FishLEN, a deep learning model for fish length estimation from images. I am particularly
+                interested in applying machine learning to practical systems and continuously improving model
+                performance through experimentation and analysis.
             </p>
 
             <div class="about-grid">
                 <div class="mini-card">
                     <h3>Research Interests</h3>
                     <div class="chips">
-                        <span class="chip">[[INTEREST_1]]</span>
-                        <span class="chip">[[INTEREST_2]]</span>
-                        <span class="chip">[[INTEREST_3]]</span>
-                        <span class="chip">[[INTEREST_4]]</span>
-                        <span class="chip">[[INTEREST_5]]</span>
-                        <span class="chip">[[INTEREST_6]]</span>
+
+                        <span class="chip">Computer Vision</span>
+                        <span class="chip">Deep Learning for Medical Imaging</span>
+                        <span class="chip">Biomedical Image Analysis</span>
+                        <span class="chip">Computational Pathology</span>
+                        <span class="chip">Image Segmentation & Classification</span>
+                        <span class="chip">Weakly Supervised Learning</span>
                     </div>
                 </div>
 
                 <div class="mini-card">
                     <h3>Technical Skills</h3>
                     <div class="chips">
-                        <span class="chip">[[SKILL_1]]</span>
-                        <span class="chip">[[SKILL_2]]</span>
-                        <span class="chip">[[SKILL_3]]</span>
-                        <span class="chip">[[SKILL_4]]</span>
-                        <span class="chip">[[SKILL_5]]</span>
-                        <span class="chip">[[SKILL_6]]</span>
-                        <span class="chip">[[SKILL_7]]</span>
-                        <span class="chip">[[SKILL_8]]</span>
+                        <span class="chip">Python</span>
+                        <span class="chip">PyTorch</span>
+                        <span class="chip">Machine Learning</span>
+                        <span class="chip">Computer Vision</span>
+                        <span class="chip">Data Analysis</span>
+                        <span class="chip">NumPy & Pandas</span>
+                        <span class="chip">Linux</span>
+                        <span class="chip">Git</span>
+                        <span class="chip">Java</span>
+                        <span class="chip">R</span>
+                        <span class="chip">HTML</span>
+                        <span class="chip">MVC</span>
+                        <span class="chip">Django</span>
+                        <span class="chip">MySQL</span>
+                        <span class="chip">SQL Server</span>
                     </div>
                 </div>
             </div>
@@ -480,74 +501,41 @@
 
         <div class="projects-grid">
             <div class="card project-card">
-                <h3>[[PROJECT_1_NAME]]</h3>
-                <div class="project-meta">[[PROJECT_1_TAGLINE]]</div>
+                <h3>Nuclei Segmentation on PanNuke</h3>
+                <div class="project-meta">Deep Learning for Multi-Class Nuclei Segmentation</div>
                 <p>
-                    [[PROJECT_1_DESCRIPTION]]
+                    A deep learning project for multi-class nuclei segmentation on the PanNuke dataset using U-Net with
+                    a ResNet encoder. Conducted systematic evaluation using metrics such as Dice and IoU, and explored
+                    model improvements through architectural design and post-processing techniques.
                 </p>
                 <div class="chips">
-                    <span class="chip">[[PROJECT_1_TECH_1]]</span>
-                    <span class="chip">[[PROJECT_1_TECH_2]]</span>
-                    <span class="chip">[[PROJECT_1_TECH_3]]</span>
-                    <span class="chip">[[PROJECT_1_TECH_4]]</span>
+                    <span class="chip">PyTorch</span>
+                    <span class="chip">U-Net</span>
+                    <span class="chip">ResNet</span>
+                    <span class="chip">Hover-Net</span>
                 </div>
                 <div class="project-links">
-                    <a href="[[PROJECT_1_GITHUB_LINK]]" target="_blank">GitHub</a>
-                    <a href="[[PROJECT_1_DEMO_OR_PAPER_LINK]]" target="_blank">More Info</a>
+                    <a href="https://github.com/BlackOrnate/MCV" target="_blank">GitHub</a>
+                    <a href="https://github.com/BlackOrnate/MCV" target="_blank">More Info</a>
                 </div>
             </div>
 
             <div class="card project-card">
-                <h3>[[PROJECT_2_NAME]]</h3>
-                <div class="project-meta">[[PROJECT_2_TAGLINE]]</div>
+                <h3>FishLEN</h3>
+                <div class="project-meta">Fish Length Estimation Network</div>
                 <p>
-                    [[PROJECT_2_DESCRIPTION]]
+                    A deep learning framework for estimating fish length from images, developed for research in the
+                    Dormant Biology Lab at Stony Brook University.
                 </p>
                 <div class="chips">
-                    <span class="chip">[[PROJECT_2_TECH_1]]</span>
-                    <span class="chip">[[PROJECT_2_TECH_2]]</span>
-                    <span class="chip">[[PROJECT_2_TECH_3]]</span>
-                    <span class="chip">[[PROJECT_2_TECH_4]]</span>
+                    <span class="chip">Python</span>
+                    <span class="chip">PyTorch</span>
+                    <span class="chip">Computer Vision</span>
+                    <span class="chip">Deep Learning</span>
                 </div>
                 <div class="project-links">
-                    <a href="[[PROJECT_2_GITHUB_LINK]]" target="_blank">GitHub</a>
-                    <a href="[[PROJECT_2_DEMO_OR_PAPER_LINK]]" target="_blank">More Info</a>
-                </div>
-            </div>
-
-            <div class="card project-card">
-                <h3>[[PROJECT_3_NAME]]</h3>
-                <div class="project-meta">[[PROJECT_3_TAGLINE]]</div>
-                <p>
-                    [[PROJECT_3_DESCRIPTION]]
-                </p>
-                <div class="chips">
-                    <span class="chip">[[PROJECT_3_TECH_1]]</span>
-                    <span class="chip">[[PROJECT_3_TECH_2]]</span>
-                    <span class="chip">[[PROJECT_3_TECH_3]]</span>
-                    <span class="chip">[[PROJECT_3_TECH_4]]</span>
-                </div>
-                <div class="project-links">
-                    <a href="[[PROJECT_3_GITHUB_LINK]]" target="_blank">GitHub</a>
-                    <a href="[[PROJECT_3_DEMO_OR_PAPER_LINK]]" target="_blank">More Info</a>
-                </div>
-            </div>
-
-            <div class="card project-card">
-                <h3>[[PROJECT_4_NAME]]</h3>
-                <div class="project-meta">[[PROJECT_4_TAGLINE]]</div>
-                <p>
-                    [[PROJECT_4_DESCRIPTION]]
-                </p>
-                <div class="chips">
-                    <span class="chip">[[PROJECT_4_TECH_1]]</span>
-                    <span class="chip">[[PROJECT_4_TECH_2]]</span>
-                    <span class="chip">[[PROJECT_4_TECH_3]]</span>
-                    <span class="chip">[[PROJECT_4_TECH_4]]</span>
-                </div>
-                <div class="project-links">
-                    <a href="[[PROJECT_4_GITHUB_LINK]]" target="_blank">GitHub</a>
-                    <a href="[[PROJECT_4_DEMO_OR_PAPER_LINK]]" target="_blank">More Info</a>
+                    <a href="https://github.com/BlackOrnate/FishLEN" target="_blank">GitHub</a>
+                    <a href="https://github.com/BlackOrnate/FishLEN" target="_blank">More Info</a>
                 </div>
             </div>
         </div>
@@ -565,30 +553,37 @@
             <div class="card experience-item">
                 <div class="experience-header">
                     <div>
-                        <div class="experience-role">Master of Science</div>
-                        <div class="experience-org">Stony Brook University</div>
+                        <div class="experience-role">M.S. in Biomedical Informatics</div>
+                        <div class="experience-org">
+                            <a href="https://www.stonybrook.edu/" target="_blank">Stony Brook University</a>
+                        </div>
                     </div>
-                    <div class="experience-time">Aug 2024 - Present</div>
+                    <div class="experience-time">Aug 2024 – May 2026 (Expected)</div>
                 </div>
                 <ul>
-                    <li>[[EDUCATION_1_BULLET_1]]</li>
-                    <li>[[EDUCATION_1_BULLET_2]]</li>
-                    <li>[[EDUCATION_1_BULLET_3]]</li>
+                    <li>Focus on machine learning, computer vision, and medical image analysis</li>
+                    <li>Experience with PyTorch-based deep learning model development and evaluation</li>
+                    <li>Developed multiple projects including FishLEN and nuclei segmentation systems</li>
                 </ul>
             </div>
 
             <div class="card experience-item">
                 <div class="experience-header">
                     <div>
-                        <div class="experience-role">Bachelor of Science and Bachelor of Engineering</div>
-                        <div class="experience-org">Dalian Jiaotong University</div>
+                        <div class="experience-role">B.S. in Applied Mathematics & Software Engineering (Double Major)
+                        </div>
+                        <div class="experience-org">
+                            <a href="http://www.djtu.edu.cn/" target="_blank">Dalian Jiaotong University</a>
+                        </div>
                     </div>
                     <div class="experience-time">Sep 2019 - May 2024</div>
                 </div>
                 <ul>
-                    <li>[[EDUCATION_2_BULLET_1]]</li>
-                    <li>[[EDUCATION_2_BULLET_2]]</li>
-                    <li>[[EDUCATION_2_BULLET_3]]</li>
+                    <li>Strong foundation in mathematics, algorithms, and software development</li>
+                    <li>Two thesis projects awarded as Outstanding Graduation Thesis</li>
+                    <li>Authored 70+ technical blog posts with 36,000+ total views, demonstrating strong technical
+                        communication skills
+                    </li>
                 </ul>
             </div>
         </div>
@@ -629,27 +624,29 @@
                 <div class="experience-header">
                     <div>
                         <div class="experience-role">Research Internship</div>
-                        <div class="experience-org">Prof Chen's Lab, Department of Biomedical Informatics, Stony
-                            Brook
-                            University
+                        <div class="experience-org">Dormant Biology Lab, Department of Biochemistry & Cell Biology,
+                            Stony Brook University
                         </div>
                     </div>
-                    <div class="experience-time">Jun 2025 - Present</div>
+                    <div class="experience-time">Jan - Jun 2025</div>
                 </div>
                 <ul>
-                    <li>[[EXPERIENCE_1_BULLET_1]]</li>
-                    <li>[[EXPERIENCE_1_BULLET_2]]</li>
-                    <li>[[EXPERIENCE_1_BULLET_3]]</li>
+                    <li>Developed FishLEN, a deep learning model for estimating fish length from images, designed to
+                        support biological research applications
+                    </li>
+                    <li>Built an end-to-end pipeline including data preprocessing, model training, and evaluation using
+                        PyTorch
+                    </li>
+                    <li>Improved model performance through iterative experimentation, including data augmentation, model
+                        tuning, and validation strategies
+                    </li>
                 </ul>
             </div>
-
-
             <div class="card experience-item">
                 <div class="experience-header">
                     <div>
                         <div class="experience-role">Research Internship</div>
-                        <div class="experience-org">Prof Chen's Lab, Department of Biomedical Informatics, Stony
-                            Brook
+                        <div class="experience-org">Prof Chen's Lab, Department of Biomedical Informatics, Stony Brook
                             University
                         </div>
                     </div>
@@ -699,12 +696,12 @@
 
                 <div class="contact-item">
                     <strong>GitHub</strong><br/>
-                    <a href="https://github.com/BlackOrnate" target="_blank">[[YOUR_GITHUB_TEXT]]</a>
+                    <a href="https://github.com/BlackOrnate" target="_blank">https://github.com/BlackOrnate</a>
                 </div>
 
                 <div class="contact-item">
                     <strong>LinkedIn</strong><br/>
-                    <a href="https://www.linkedin.com/in/hongruizhu/" target="_blank">[[YOUR_LINKEDIN_TEXT]]</a>
+                    <a href="https://www.linkedin.com/in/hongruizhu/" target="_blank">https://www.linkedin.com/in/hongruizhu/</a>
                 </div>
 
                 <div class="contact-item">
