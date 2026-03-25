@@ -1,17 +1,668 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Hongrui Zhu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[[YOUR_NAME]] | Personal Website</title>
+  <meta
+    name="description"
+    content="[[YOUR_NAME]] - [[YOUR_ROLE]] at [[YOUR_UNIVERSITY]]. Research interests in [[YOUR_RESEARCH_AREA_1]], [[YOUR_RESEARCH_AREA_2]], and [[YOUR_RESEARCH_AREA_3]]."
+  />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121933;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #eef2ff;
+      --muted: #b8c1ec;
+      --accent: #7c9cff;
+      --accent-2: #8ef0d2;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      --max-width: 1120px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124, 156, 255, 0.18), transparent 25%),
+        radial-gradient(circle at top right, rgba(142, 240, 210, 0.12), transparent 22%),
+        linear-gradient(180deg, #0a0f1f 0%, #0d1328 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(8, 12, 24, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 80px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 42px 34px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(124, 156, 255, 0.14);
+      color: #dbe4ff;
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+      border: 1px solid rgba(124, 156, 255, 0.2);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 22px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #9f78ff);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-side {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .stat-box {
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin: 0 0 16px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 760px;
+    }
+
+    .about-card,
+    .contact-card {
+      padding: 28px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .mini-card {
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mini-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(124, 156, 255, 0.14);
+      color: #e3e9ff;
+      font-size: 0.9rem;
+      border: 1px solid rgba(124, 156, 255, 0.18);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      padding: 24px;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .project-meta {
+      color: var(--accent-2);
+      font-size: 0.92rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-item {
+      padding: 24px;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .experience-role {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .experience-time {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .experience-org {
+      color: var(--accent-2);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .experience-item ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      padding: 18px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer {
+      padding: 40px 0 60px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero-main,
+      .hero-side,
+      .about-card,
+      .contact-card,
+      .project-card,
+      .experience-item {
+        padding: 22px;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Arial; text-align: center; margin-top: 100px;">
-    <h1>Hongrui Zhu</h1>
-    <p>Master Student @ Stony Brook University</p>
-    <p>Biomedical Informatics | Computer Vision | Medical Imaging</p>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">[[YOUR_NAME]]</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-    <h2>Projects</h2>
-    <p>FishLEN - Fish Length Estimation Network</p>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="card hero-main">
+        <div class="hero-tag">[[YOUR_SHORT_TAGLINE]]</div>
+        <h1>Hi, I'm [[YOUR_NAME]].</h1>
+        <p class="hero-subtitle">
+          I'm a [[YOUR_ROLE]] at [[YOUR_UNIVERSITY]] with interests in
+          [[YOUR_RESEARCH_AREA_1]], [[YOUR_RESEARCH_AREA_2]], and [[YOUR_RESEARCH_AREA_3]].
+          My work focuses on building practical and research-oriented computational methods
+          for [[YOUR_APPLICATION_DOMAIN]].
+        </p>
+        <p class="hero-subtitle">
+          I am currently working on [[YOUR_CURRENT_FOCUS_1]] and [[YOUR_CURRENT_FOCUS_2]],
+          and I am actively seeking opportunities in [[YOUR_TARGET_OPPORTUNITY_TYPE]].
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="[[YOUR_RESUME_LINK]]" target="_blank">View Resume</a>
+          <a class="btn btn-secondary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="[[YOUR_GITHUB_LINK]]" target="_blank">GitHub</a>
+          <a class="btn btn-secondary" href="[[YOUR_LINKEDIN_LINK]]" target="_blank">LinkedIn</a>
+        </div>
+      </div>
 
-    <h2>Contact</h2>
-    <p>Email: your_email@example.com</p>
+      <div class="card hero-side">
+        <div class="stat-box">
+          <div class="stat-label">Current Position</div>
+          <div class="stat-value">[[YOUR_ROLE]]</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Institution</div>
+          <div class="stat-value">[[YOUR_UNIVERSITY]]</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Research Focus</div>
+          <div class="stat-value">[[YOUR_MAIN_RESEARCH_FOCUS]]</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Currently Open To</div>
+          <div class="stat-value">[[YOUR_TARGET_OPPORTUNITY_TYPE]]</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="card about-card">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-desc">
+          [[ABOUT_ME_PARAGRAPH_1]]
+        </p>
+        <p class="section-desc">
+          [[ABOUT_ME_PARAGRAPH_2]]
+        </p>
+
+        <div class="about-grid">
+          <div class="mini-card">
+            <h3>Research Interests</h3>
+            <div class="chips">
+              <span class="chip">[[INTEREST_1]]</span>
+              <span class="chip">[[INTEREST_2]]</span>
+              <span class="chip">[[INTEREST_3]]</span>
+              <span class="chip">[[INTEREST_4]]</span>
+              <span class="chip">[[INTEREST_5]]</span>
+              <span class="chip">[[INTEREST_6]]</span>
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <h3>Technical Skills</h3>
+            <div class="chips">
+              <span class="chip">[[SKILL_1]]</span>
+              <span class="chip">[[SKILL_2]]</span>
+              <span class="chip">[[SKILL_3]]</span>
+              <span class="chip">[[SKILL_4]]</span>
+              <span class="chip">[[SKILL_5]]</span>
+              <span class="chip">[[SKILL_6]]</span>
+              <span class="chip">[[SKILL_7]]</span>
+              <span class="chip">[[SKILL_8]]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Selected Projects</h2>
+      <p class="section-desc">
+        Here are a few projects that reflect my interests in research, engineering, and applied machine learning.
+      </p>
+
+      <div class="projects-grid">
+        <div class="card project-card">
+          <h3>[[PROJECT_1_NAME]]</h3>
+          <div class="project-meta">[[PROJECT_1_TAGLINE]]</div>
+          <p>
+            [[PROJECT_1_DESCRIPTION]]
+          </p>
+          <div class="chips">
+            <span class="chip">[[PROJECT_1_TECH_1]]</span>
+            <span class="chip">[[PROJECT_1_TECH_2]]</span>
+            <span class="chip">[[PROJECT_1_TECH_3]]</span>
+            <span class="chip">[[PROJECT_1_TECH_4]]</span>
+          </div>
+          <div class="project-links">
+            <a href="[[PROJECT_1_GITHUB_LINK]]" target="_blank">GitHub</a>
+            <a href="[[PROJECT_1_DEMO_OR_PAPER_LINK]]" target="_blank">More Info</a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <h3>[[PROJECT_2_NAME]]</h3>
+          <div class="project-meta">[[PROJECT_2_TAGLINE]]</div>
+          <p>
+            [[PROJECT_2_DESCRIPTION]]
+          </p>
+          <div class="chips">
+            <span class="chip">[[PROJECT_2_TECH_1]]</span>
+            <span class="chip">[[PROJECT_2_TECH_2]]</span>
+            <span class="chip">[[PROJECT_2_TECH_3]]</span>
+            <span class="chip">[[PROJECT_2_TECH_4]]</span>
+          </div>
+          <div class="project-links">
+            <a href="[[PROJECT_2_GITHUB_LINK]]" target="_blank">GitHub</a>
+            <a href="[[PROJECT_2_DEMO_OR_PAPER_LINK]]" target="_blank">More Info</a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <h3>[[PROJECT_3_NAME]]</h3>
+          <div class="project-meta">[[PROJECT_3_TAGLINE]]</div>
+          <p>
+            [[PROJECT_3_DESCRIPTION]]
+          </p>
+          <div class="chips">
+            <span class="chip">[[PROJECT_3_TECH_1]]</span>
+            <span class="chip">[[PROJECT_3_TECH_2]]</span>
+            <span class="chip">[[PROJECT_3_TECH_3]]</span>
+            <span class="chip">[[PROJECT_3_TECH_4]]</span>
+          </div>
+          <div class="project-links">
+            <a href="[[PROJECT_3_GITHUB_LINK]]" target="_blank">GitHub</a>
+            <a href="[[PROJECT_3_DEMO_OR_PAPER_LINK]]" target="_blank">More Info</a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <h3>[[PROJECT_4_NAME]]</h3>
+          <div class="project-meta">[[PROJECT_4_TAGLINE]]</div>
+          <p>
+            [[PROJECT_4_DESCRIPTION]]
+          </p>
+          <div class="chips">
+            <span class="chip">[[PROJECT_4_TECH_1]]</span>
+            <span class="chip">[[PROJECT_4_TECH_2]]</span>
+            <span class="chip">[[PROJECT_4_TECH_3]]</span>
+            <span class="chip">[[PROJECT_4_TECH_4]]</span>
+          </div>
+          <div class="project-links">
+            <a href="[[PROJECT_4_GITHUB_LINK]]" target="_blank">GitHub</a>
+            <a href="[[PROJECT_4_DEMO_OR_PAPER_LINK]]" target="_blank">More Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience & Education</h2>
+      <p class="section-desc">
+        A brief summary of my academic background and research-related experience.
+      </p>
+
+      <div class="experience-list">
+        <div class="card experience-item">
+          <div class="experience-header">
+            <div>
+              <div class="experience-role">[[EXPERIENCE_1_ROLE]]</div>
+              <div class="experience-org">[[EXPERIENCE_1_ORGANIZATION]]</div>
+            </div>
+            <div class="experience-time">[[EXPERIENCE_1_TIME]]</div>
+          </div>
+          <ul>
+            <li>[[EXPERIENCE_1_BULLET_1]]</li>
+            <li>[[EXPERIENCE_1_BULLET_2]]</li>
+            <li>[[EXPERIENCE_1_BULLET_3]]</li>
+          </ul>
+        </div>
+
+        <div class="card experience-item">
+          <div class="experience-header">
+            <div>
+              <div class="experience-role">[[EXPERIENCE_2_ROLE]]</div>
+              <div class="experience-org">[[EXPERIENCE_2_ORGANIZATION]]</div>
+            </div>
+            <div class="experience-time">[[EXPERIENCE_2_TIME]]</div>
+          </div>
+          <ul>
+            <li>[[EXPERIENCE_2_BULLET_1]]</li>
+            <li>[[EXPERIENCE_2_BULLET_2]]</li>
+            <li>[[EXPERIENCE_2_BULLET_3]]</li>
+          </ul>
+        </div>
+
+        <div class="card experience-item">
+          <div class="experience-header">
+            <div>
+              <div class="experience-role">[[EDUCATION_1_DEGREE]]</div>
+              <div class="experience-org">[[EDUCATION_1_SCHOOL]]</div>
+            </div>
+            <div class="experience-time">[[EDUCATION_1_TIME]]</div>
+          </div>
+          <ul>
+            <li>[[EDUCATION_1_BULLET_1]]</li>
+            <li>[[EDUCATION_1_BULLET_2]]</li>
+            <li>[[EDUCATION_1_BULLET_3]]</li>
+          </ul>
+        </div>
+
+        <div class="card experience-item">
+          <div class="experience-header">
+            <div>
+              <div class="experience-role">[[EDUCATION_2_DEGREE]]</div>
+              <div class="experience-org">[[EDUCATION_2_SCHOOL]]</div>
+            </div>
+            <div class="experience-time">[[EDUCATION_2_TIME]]</div>
+          </div>
+          <ul>
+            <li>[[EDUCATION_2_BULLET_1]]</li>
+            <li>[[EDUCATION_2_BULLET_2]]</li>
+            <li>[[EDUCATION_2_BULLET_3]]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="card contact-card">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-desc">
+          I’m happy to connect about research, internships, full-time opportunities, and collaborative projects.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <strong>Email</strong><br />
+            <a href="mailto:[[YOUR_EMAIL]]">[[YOUR_EMAIL]]</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>GitHub</strong><br />
+            <a href="[[YOUR_GITHUB_LINK]]" target="_blank">[[YOUR_GITHUB_TEXT]]</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>LinkedIn</strong><br />
+            <a href="[[YOUR_LINKEDIN_LINK]]" target="_blank">[[YOUR_LINKEDIN_TEXT]]</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>Location</strong><br />
+            [[YOUR_LOCATION]]
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © [[CURRENT_YEAR]] [[YOUR_NAME]]. Built with HTML and CSS on GitHub Pages.
+    </div>
+  </footer>
 </body>
 </html>
