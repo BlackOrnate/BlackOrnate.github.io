@@ -10,26 +10,30 @@
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #ffffff;
-      --ink: #171717;
-      --muted: #5f6368;
-      --soft: #8a8f98;
-      --line: rgba(0, 0, 0, 0.09);
-      --surface: #ffffff;
-      --surface-soft: #fafafa;
-      --surface-tint: #f5f7fb;
-      --blue: #0a72ef;
-      --blue-soft: #ebf5ff;
-      --purple: #6d5dfc;
-      --green: #0f9f6e;
-      --red: #d93025;
-      --shadow-border: rgba(0, 0, 0, 0.08) 0 0 0 1px;
-      --shadow-card: rgba(0, 0, 0, 0.08) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 2px, rgba(0, 0, 0, 0.04) 0 10px 22px -14px, #fafafa 0 0 0 1px inset;
+      --bg: oklch(15.5% 0.012 240);
+      --ink: oklch(95% 0.008 240);
+      --muted: oklch(72% 0.014 240);
+      --soft: oklch(50% 0.015 240);
+      --line: oklch(55% 0.02 240 / 0.16);
+      --surface: oklch(21% 0.014 240);
+      --surface-soft: oklch(19% 0.013 240);
+      --surface-tint: oklch(24% 0.015 240);
+      --blue: oklch(78% 0.125 199);
+      --blue-strong: oklch(88% 0.10 199);
+      --blue-soft: oklch(78% 0.125 199 / 0.12);
+      --accent-ink: oklch(14% 0.03 199);
+      --purple: oklch(72% 0.11 300);
+      --green: oklch(75% 0.14 155);
+      --red: oklch(70% 0.18 25);
+      --shadow-border: oklch(55% 0.02 240 / 0.18) 0 0 0 1px;
+      --shadow-card: oklch(0% 0 0 / 0.4) 0 0 0 1px, oklch(0% 0 0 / 0.3) 0 2px 2px, oklch(0% 0 0 / 0.35) 0 14px 30px -14px, oklch(23% 0.015 240) 0 0 0 1px inset;
       --radius: 18px;
       --max: 1160px;
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
     }
 
     * { box-sizing: border-box; }
@@ -38,11 +42,11 @@
 
     body {
       margin: 0;
-      font-family: "Geist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 50% -10%, rgba(10, 114, 239, 0.11), transparent 32rem),
-        linear-gradient(180deg, #ffffff 0%, #fbfbfc 38%, #ffffff 100%);
+        radial-gradient(circle at 50% -10%, oklch(78% 0.125 199 / 0.10), transparent 32rem),
+        linear-gradient(180deg, oklch(15.5% 0.012 240) 0%, oklch(13.5% 0.011 240) 38%, oklch(15.5% 0.012 240) 100%);
       line-height: 1.55;
       font-feature-settings: "liga" 1, "kern" 1;
       text-rendering: optimizeLegibility;
@@ -51,7 +55,9 @@
     a { color: inherit; text-decoration: none; }
     a:hover { color: var(--blue); }
 
-    ::selection { background: #dbeafe; color: var(--ink); }
+    ::selection { background: oklch(78% 0.125 199 / 0.28); color: var(--ink); }
+
+    h1, h2 { font-family: var(--font-display); font-weight: 600; }
 
     .container {
       width: min(var(--max), calc(100% - 40px));
@@ -62,9 +68,9 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 255, 255, 0.82);
+      background: oklch(15.5% 0.012 240 / 0.86);
       backdrop-filter: saturate(180%) blur(18px);
-      box-shadow: rgba(0, 0, 0, 0.08) 0 1px 0;
+      box-shadow: oklch(55% 0.02 240 / 0.16) 0 1px 0;
     }
 
     .nav-inner {
@@ -90,10 +96,10 @@
       display: grid;
       place-items: center;
       border-radius: 9px;
-      color: #fff;
-      background: linear-gradient(135deg, #171717, #4b5563);
+      color: var(--accent-ink);
+      background: var(--blue);
       font-size: 13px;
-      font-family: "Geist Mono", ui-monospace, monospace;
+      font-family: var(--font-mono);
       box-shadow: var(--shadow-border);
     }
 
@@ -118,8 +124,8 @@
 
     .nav-cta {
       padding: 8px 14px !important;
-      background: var(--ink);
-      color: white !important;
+      background: var(--blue);
+      color: var(--accent-ink) !important;
       box-shadow: var(--shadow-border);
     }
 
@@ -134,10 +140,10 @@
       padding: 6px 10px;
       border-radius: 999px;
       background: var(--blue-soft);
-      color: #075fc7;
+      color: var(--blue);
       font-size: 13px;
       font-weight: 550;
-      box-shadow: rgba(0, 104, 214, 0.18) 0 0 0 1px inset;
+      box-shadow: oklch(78% 0.125 199 / 0.22) 0 0 0 1px inset;
     }
 
     .eyebrow::before {
@@ -146,7 +152,7 @@
       height: 7px;
       border-radius: 999px;
       background: var(--green);
-      box-shadow: rgba(15, 159, 110, 0.35) 0 0 0 4px;
+      box-shadow: oklch(75% 0.14 155 / 0.3) 0 0 0 4px;
     }
 
     .hero-grid {
@@ -161,9 +167,19 @@
       margin: 0;
       max-width: 850px;
       font-size: clamp(48px, 8vw, 88px);
-      line-height: 0.95;
-      letter-spacing: -0.075em;
-      font-weight: 650;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+    }
+
+    .hero-role {
+      margin: 20px 0 0;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: clamp(19px, 2.3vw, 24px);
+      line-height: 1.45;
+      letter-spacing: -0.015em;
+      font-weight: 500;
     }
 
     .hero-lede {
@@ -198,15 +214,15 @@
     .button:hover { transform: translateY(-1px); text-decoration: none; }
 
     .button-primary {
-      background: var(--ink);
-      color: #fff;
+      background: var(--blue);
+      color: var(--accent-ink);
       box-shadow: var(--shadow-card);
     }
 
-    .button-primary:hover { color: #fff; background: #000; }
+    .button-primary:hover { color: var(--accent-ink); background: var(--blue-strong); }
 
     .button-secondary {
-      background: #fff;
+      background: var(--surface);
       color: var(--ink);
       box-shadow: var(--shadow-border);
     }
@@ -231,7 +247,7 @@
     .panel-title {
       margin: 0 0 6px;
       color: var(--soft);
-      font-family: "Geist Mono", ui-monospace, monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.08em;
@@ -241,7 +257,7 @@
     .signal {
       padding: 16px;
       border-radius: 14px;
-      background: linear-gradient(180deg, #fff, #fbfbfc);
+      background: linear-gradient(180deg, oklch(20.5% 0.013 240), oklch(18.5% 0.012 240));
       box-shadow: var(--shadow-border);
     }
 
@@ -257,35 +273,6 @@
       color: var(--muted);
       font-size: 14px;
       line-height: 1.45;
-    }
-
-    .metric-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-
-    .metric {
-      padding: 16px;
-      border-radius: 14px;
-      background: var(--surface-soft);
-      box-shadow: var(--shadow-border);
-    }
-
-    .metric-number {
-      display: block;
-      font-size: 25px;
-      line-height: 1;
-      font-weight: 650;
-      letter-spacing: -0.06em;
-    }
-
-    .metric-label {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
     }
 
     .section {
@@ -306,7 +293,7 @@
     .kicker {
       margin: 0;
       color: var(--blue);
-      font-family: "Geist Mono", ui-monospace, monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
       font-weight: 600;
       letter-spacing: .08em;
@@ -315,10 +302,10 @@
 
     h2 {
       margin: 0;
-      font-size: clamp(32px, 4.2vw, 52px);
-      line-height: 1.04;
-      letter-spacing: -0.06em;
-      font-weight: 650;
+      font-size: clamp(30px, 3.8vw, 46px);
+      line-height: 1.18;
+      letter-spacing: -0.005em;
+      font-weight: 600;
     }
 
     .section-copy {
@@ -339,7 +326,7 @@
     .about-card { padding: 30px; }
 
     .about-card p {
-      margin: 0 0 18px;
+      margin: 0 0 36px;
       color: var(--muted);
       font-size: 17px;
     }
@@ -349,6 +336,7 @@
     .focus-list {
       display: grid;
       gap: 12px;
+      align-content: space-between;
     }
 
     .focus-item {
@@ -408,24 +396,32 @@
       padding: 5px 9px;
       border-radius: 999px;
       background: var(--blue-soft);
-      color: #075fc7;
+      color: var(--blue);
       font-size: 12px;
       font-weight: 560;
-      box-shadow: rgba(0, 104, 214, 0.14) 0 0 0 1px inset;
+      box-shadow: oklch(78% 0.125 199 / 0.2) 0 0 0 1px inset;
       white-space: nowrap;
     }
 
-    .pill.neutral { background: #f2f3f5; color: #52565c; box-shadow: var(--shadow-border); }
-    .pill.green { background: #e9f8f2; color: #087451; box-shadow: rgba(15,159,110,.18) 0 0 0 1px inset; }
-    .pill.purple { background: #f0edff; color: #5948d8; box-shadow: rgba(109,93,252,.18) 0 0 0 1px inset; }
+    .pill.neutral { background: var(--surface-soft); color: var(--muted); box-shadow: var(--shadow-border); }
+    .pill.green { background: oklch(75% 0.14 155 / 0.12); color: var(--green); box-shadow: oklch(75% 0.14 155 / 0.22) 0 0 0 1px inset; }
+    .pill.purple { background: oklch(72% 0.11 300 / 0.12); color: var(--purple); box-shadow: oklch(72% 0.11 300 / 0.22) 0 0 0 1px inset; }
 
-    .project-card h3,
     .experience-item h3 {
       margin: 0;
       font-size: 26px;
       line-height: 1.12;
       letter-spacing: -0.045em;
       font-weight: 650;
+    }
+
+    .project-card h3 {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 21px;
+      line-height: 1.2;
+      letter-spacing: -0.005em;
+      font-weight: 600;
     }
 
     .project-subtitle {
@@ -451,8 +447,11 @@
 
     .outcome b {
       display: block;
-      font-size: 18px;
-      letter-spacing: -0.04em;
+      font-family: var(--font-mono);
+      color: var(--blue);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0;
     }
 
     .outcome span {
@@ -486,7 +485,7 @@
       gap: 8px;
       padding: 8px 12px;
       border-radius: 10px;
-      background: #fff;
+      background: var(--surface);
       color: var(--ink);
       font-size: 13px;
       font-weight: 560;
@@ -503,9 +502,9 @@
     .tech {
       padding: 6px 9px;
       border-radius: 8px;
-      color: #44484f;
-      background: #f4f4f5;
-      font-family: "Geist Mono", ui-monospace, monospace;
+      color: var(--muted);
+      background: var(--surface-soft);
+      font-family: var(--font-mono);
       font-size: 12px;
       box-shadow: var(--shadow-border);
     }
@@ -514,8 +513,8 @@
       min-height: 100%;
       border-radius: 16px;
       background:
-        linear-gradient(145deg, rgba(10, 114, 239, 0.16), rgba(109, 93, 252, 0.08)),
-        #fbfcff;
+        linear-gradient(145deg, oklch(78% 0.125 199 / 0.16), oklch(72% 0.11 300 / 0.08)),
+        var(--surface-soft);
       box-shadow: var(--shadow-border);
       padding: 18px;
       display: grid;
@@ -530,7 +529,7 @@
       align-items: start;
       padding: 14px;
       border-radius: 14px;
-      background: rgba(255, 255, 255, .72);
+      background: var(--surface);
       box-shadow: var(--shadow-border);
     }
 
@@ -540,9 +539,9 @@
       display: grid;
       place-items: center;
       border-radius: 10px;
-      background: var(--ink);
-      color: #fff;
-      font-family: "Geist Mono", ui-monospace, monospace;
+      background: var(--blue);
+      color: var(--accent-ink);
+      font-family: var(--font-mono);
       font-size: 13px;
     }
 
@@ -575,7 +574,7 @@
 
     .date {
       color: var(--soft);
-      font-family: "Geist Mono", ui-monospace, monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
       font-weight: 500;
       letter-spacing: .02em;
@@ -597,8 +596,35 @@
       gap: 18px;
     }
 
+
     .compact-card {
       padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .compact-card h3 {
+      display: flex;
+      align-items: flex-end;
+      min-height: 2.5em;
+      line-height: 1.25;
+    }
+
+    .compact-card .edu-thesis {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .compact-card h3 {
@@ -685,8 +711,7 @@
       .project-grid,
       .education-grid,
       .skills-grid,
-      .contact-grid,
-      .metric-row { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
       .project-card { min-height: auto; }
       .project-topline { flex-direction: column; }
       .outcomes { grid-template-columns: 1fr 1fr; }
@@ -722,9 +747,10 @@
         <span class="eyebrow">Open to Machine Learning, AI, and Data Analysis roles</span>
         <div class="hero-grid">
           <div>
-            <h1>Machine learning, AI, and data analysis for real-world visual data.</h1>
+            <h1>Hongrui Zhu</h1>
+            <p class="hero-role">Machine learning, AI, and data analysis for real-world visual data.</p>
             <p class="hero-lede">
-              I’m Hongrui Zhu, a Biomedical Informatics M.S. graduate from Stony Brook University. I build and evaluate machine learning systems across computer vision, biomedical imaging, and data analysis—turning complex data into measurable, reproducible results.
+              A Biomedical Informatics M.S. graduate from Stony Brook University. I build and evaluate machine learning systems across computer vision, biomedical imaging, and data analysis.
             </p>
             <div class="hero-actions">
               <a class="button button-primary" href="#projects">View selected work</a>
@@ -744,10 +770,6 @@
               <strong>Academic base</strong>
               <span>M.S. Biomedical Informatics graduate, Stony Brook University · GPA 3.88 / 4.0</span>
             </div>
-            <div class="metric-row">
-              <div class="metric"><span class="metric-number">0.933</span><span class="metric-label">weighted-F1 on CellSeg-UNICls</span></div>
-              <div class="metric"><span class="metric-number">95.40%</span><span class="metric-label">FishLEN predictions within 10% error</span></div>
-            </div>
             <div class="signal">
               <strong>Core toolkit</strong>
               <span>Python · PyTorch · TensorFlow · SQL · Pandas · NumPy · U-Net · ResNet · SAM · LangChain</span>
@@ -762,8 +784,8 @@
         <div class="section-heading">
           <p class="kicker">What I do</p>
           <div>
-            <h2>ML/AI problem solving with strong data analysis fundamentals.</h2>
-            <p class="section-copy">I combine model development, data preparation, evaluation, and clear communication—skills that translate across machine learning, AI engineering, and data analysis roles.</p>
+            <h2>Machine learning, AI engineering, and data analysis.</h2>
+            <p class="section-copy">I work across model development, data preparation, and evaluation, spanning machine learning, AI engineering, and data analysis roles.</p>
           </div>
         </div>
         <div class="about-layout">
@@ -775,7 +797,7 @@
               My recent projects include CellSeg-UNICls for brain histopathology cell segmentation and classification, multi-class nuclei instance segmentation on PanNuke, and FishLEN for killifish length estimation. Across these projects, I built training pipelines, reproduced prior methods, integrated segmentation and representation models, engineered features, and evaluated results with task-specific metrics.
             </p>
             <p>
-              I’m currently seeking full-time opportunities in machine learning, AI, computer vision, and data analysis roles where rigorous experimentation, reliable implementation, and clear analytical thinking all matter.
+              I’m currently seeking full-time opportunities in machine learning, AI, computer vision, and data analysis roles.
             </p>
           </article>
           <div class="focus-list">
@@ -797,16 +819,27 @@
         </div>
         <div class="education-grid">
           <article class="card compact-card">
-            <span class="pill">GPA 3.88 / 4.0</span>
-            <h3 style="margin-top:16px;">M.S. in Biomedical Informatics</h3>
-            <p>Stony Brook University · Stony Brook, NY · Sep 2024 — May 2026 · Graduated</p>
-            <p style="margin-top:12px;">Thesis: CellSeg-UNICls: Decoupled Segmentation and Embedding-based Cell Classification for Brain Histopathology.</p>
+            <div>
+              <div class="pill-row">
+                <span class="pill">Master's Degree</span>
+                <span class="pill neutral">GPA 3.88 / 4.0</span>
+              </div>
+              <h3 style="margin-top:16px;">M.S. in Biomedical Informatics</h3>
+              <p>Stony Brook University · Stony Brook, NY · Sep 2024 — May 2026</p>
+            </div>
+            <div class="edu-thesis"><p>Thesis: CellSeg-UNICls: Decoupled Segmentation and Embedding-based Cell Classification for Brain Histopathology.</p></div>
           </article>
           <article class="card compact-card">
-            <span class="pill neutral">Double major</span>
-            <h3 style="margin-top:16px;">B.S. in Math & Applied Math and Software Engineering</h3>
-            <p>Dalian Jiaotong University · Dalian, China · Sep 2019 — Jun 2024</p>
-            <p style="margin-top:12px;">Both graduation theses received University-Level Outstanding Thesis recognition.</p>
+            <div>
+              <div class="pill-row">
+                <span class="pill">Bachelor's Degree</span>
+                <span class="pill neutral">GPA 3.3 / 4.0</span>
+                <span class="pill neutral">Double major</span>
+              </div>
+              <h3 style="margin-top:16px;">B.S. in Mathematics and Applied Mathematics, and Software Engineering</h3>
+              <p>Dalian Jiaotong University · Dalian, China · Sep 2019 — Jun 2024</p>
+            </div>
+            <div class="edu-thesis"><p>Math Thesis: Discussion on Methods for Solving Linear Programming Problems.<br>Software Thesis: Neural Network Algorithm for Cancer Cell (Melanoma) Detection based on Image Data.<br>Both received University-Level Outstanding Thesis recognition.</p></div>
           </article>
         </div>
       </div>
@@ -817,8 +850,8 @@
         <div class="section-heading">
           <p class="kicker">Selected projects</p>
           <div>
-            <h2>Projects with concrete model outputs, not just topic labels.</h2>
-            <p class="section-copy">Each project highlights the problem, technical approach, and measurable result behind the work.</p>
+            <h2>Projects in computer vision and biomedical imaging.</h2>
+            <p class="section-copy">Each project below includes the problem, technical approach, and results.</p>
           </div>
         </div>
 
@@ -890,7 +923,7 @@
           <p class="kicker">Experience</p>
           <div>
             <h2>Research experience across pathology, biology, and brain science.</h2>
-            <p class="section-copy">A concise view of the lab context, technical contribution, and measurable impact behind each role.</p>
+            <p class="section-copy">Lab context, technical contribution, and outcomes for each role.</p>
           </div>
         </div>
 
@@ -969,7 +1002,7 @@
         <div class="card contact-card">
           <div>
             <p class="kicker">Contact</p>
-            <h2>Let’s talk about ML, AI, data analysis, or computer vision roles.</h2>
+            <h2>Get in touch.</h2>
             <p class="section-copy">I’m happy to connect about full-time opportunities, research collaborations, and applied machine learning projects.</p>
           </div>
           <div class="contact-links">
@@ -985,7 +1018,7 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <span>© 2026 Hongrui Zhu. Designed and built as a focused personal portfolio.</span>
+      <span>© 2026 Hongrui Zhu.</span>
       <span>Stony Brook, NY · Machine Learning · Computer Vision · Biomedical Informatics</span>
     </div>
   </footer>
