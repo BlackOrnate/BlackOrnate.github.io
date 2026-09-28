@@ -191,6 +191,19 @@
       letter-spacing: -0.02em;
     }
 
+    .hero-lede + .hero-lede { margin-top: 14px; }
+
+    .person-link {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-color: var(--blue);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color .15s ease;
+    }
+
+    .person-link:hover { color: var(--blue); }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -572,6 +585,12 @@
       line-height: 1.45;
     }
 
+    .advisor {
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
     .date {
       color: var(--soft);
       font-family: var(--font-mono);
@@ -752,6 +771,9 @@
             <p class="hero-lede">
               A Biomedical Informatics M.S. graduate from Stony Brook University. I build and evaluate machine learning systems across computer vision, biomedical imaging, and data analysis.
             </p>
+            <p class="hero-lede">
+              At Stony Brook, I worked with <a class="person-link" href="https://chaochen.github.io/" target="_blank" rel="noopener">Prof. Chao Chen</a> on CellSeg-UNICls, a decoupled cell segmentation and embedding-based classification framework for brain histopathology, and with <a class="person-link" href="https://dormantbiologylab.org/member/chi-kuo-hu/" target="_blank" rel="noopener">Prof. Chi-Kuo Hu</a> in the Dormant Biology Lab on FishLEN, a computer vision system for killifish length estimation.
+            </p>
             <div class="hero-actions">
               <a class="button button-primary" href="#projects">View selected work</a>
               <a class="button button-secondary" href="https://drive.google.com/file/d/1ueltVGtK-Pqd7Lv0R8ciHMoP72eMP4gm/view?usp=drive_link" target="_blank" rel="noopener">Resume PDF</a>
@@ -929,7 +951,7 @@
 
         <div class="timeline">
           <article class="card experience-item">
-            <div class="meta"><span class="pill">Research Internship</span><span class="date">Jun 2025 — May 2026</span><span class="org">Department of Biomedical Informatics · Stony Brook University</span></div>
+            <div class="meta"><span class="pill">Research Internship</span><span class="date">Jun 2025 — May 2026</span><span class="org">Department of Biomedical Informatics · Stony Brook University</span><span class="advisor">with <a class="person-link" href="https://chaochen.github.io/" target="_blank" rel="noopener">Prof. Chao Chen</a></span></div>
             <div class="experience-body">
               <h3>Cell segmentation and classification for brain histopathology</h3>
               <ul>
@@ -942,7 +964,7 @@
           </article>
 
           <article class="card experience-item">
-            <div class="meta"><span class="pill green">Research Internship</span><span class="date">Jan 2025 — Jun 2025</span><span class="org">Dormant Biology Lab · Stony Brook University</span></div>
+            <div class="meta"><span class="pill green">Research Internship</span><span class="date">Jan 2025 — Jun 2025</span><span class="org">Dormant Biology Lab · Stony Brook University</span><span class="advisor">with <a class="person-link" href="https://dormantbiologylab.org/member/chi-kuo-hu/" target="_blank" rel="noopener">Prof. Chi-Kuo Hu</a></span></div>
             <div class="experience-body">
               <h3>Computer vision system for fish length estimation</h3>
               <ul>
@@ -954,7 +976,7 @@
           </article>
 
           <article class="card experience-item">
-            <div class="meta"><span class="pill purple">Research Internship</span><span class="date">Nov 2024 — Dec 2024</span><span class="org">Department of Biomedical Informatics · Stony Brook University</span></div>
+            <div class="meta"><span class="pill purple">Research Internship</span><span class="date">Nov 2024 — Dec 2024</span><span class="org">Department of Biomedical Informatics · Stony Brook University</span><span class="advisor">with <a class="person-link" href="https://chaochen.github.io/" target="_blank" rel="noopener">Prof. Chao Chen</a></span></div>
             <div class="experience-body">
               <h3>Reproduction and analysis of cell segmentation models</h3>
               <ul>
@@ -966,7 +988,7 @@
           </article>
 
           <article class="card experience-item">
-            <div class="meta"><span class="pill neutral">Research Internship</span><span class="date">Oct 2023 — Dec 2023</span><span class="org">Center for Innovation in Brain Science · University of Arizona</span></div>
+            <div class="meta"><span class="pill neutral">Research Internship</span><span class="date">Oct 2023 — Dec 2023</span><span class="org">Center for Innovation in Brain Science · University of Arizona</span><span class="advisor">with <a class="person-link" href="https://pathbiotech.com/leadership" target="_blank" rel="noopener">Prof. Rui Chang</a></span></div>
             <div class="experience-body">
               <h3>TensorFlow migration and pipeline refactoring</h3>
               <ul>
