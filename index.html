@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hongrui Zhu | Machine Learning, AI & Data Analysis</title>
-  <meta name="description" content="Hongrui Zhu is a Biomedical Informatics M.S. graduate from Stony Brook University seeking machine learning, AI, and data analysis roles. Portfolio includes computer vision, biomedical imaging, model evaluation, and AI systems projects." />
-  <meta property="og:title" content="Hongrui Zhu | Machine Learning, AI & Data Analysis" />
-  <meta property="og:description" content="Machine learning, AI, and data analysis portfolio with projects in computer vision, biomedical imaging, model evaluation, and AI systems." />
+  <title>Hongrui Zhu | Biomedical AI and Machine Learning</title>
+  <meta name="description" content="Hongrui Zhu, M.S. in Biomedical Informatics from Stony Brook University, works on medical image analysis, computational pathology, and LLM agents for biomedical research. Applying to PhD programs for Fall 2027." />
+  <meta property="og:title" content="Hongrui Zhu | Biomedical AI and Machine Learning" />
+  <meta property="og:description" content="Medical image analysis, computational pathology, and LLM agents for biomedical research. Applying to PhD programs for Fall 2027." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://blackornate.github.io/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
       --bg: oklch(15.5% 0.012 240);
       --ink: oklch(95% 0.008 240);
       --muted: oklch(72% 0.014 240);
-      --soft: oklch(50% 0.015 240);
+      --soft: oklch(55% 0.015 240);
       --line: oklch(55% 0.02 240 / 0.16);
       --surface: oklch(21% 0.014 240);
       --surface-soft: oklch(19% 0.013 240);
@@ -27,17 +28,15 @@
       --accent-ink: oklch(14% 0.03 199);
       --purple: oklch(72% 0.11 300);
       --green: oklch(75% 0.14 155);
-      --red: oklch(70% 0.18 25);
       --shadow-border: oklch(55% 0.02 240 / 0.18) 0 0 0 1px;
       --shadow-card: oklch(0% 0 0 / 0.4) 0 0 0 1px, oklch(0% 0 0 / 0.3) 0 2px 2px, oklch(0% 0 0 / 0.35) 0 14px 30px -14px, oklch(23% 0.015 240) 0 0 0 1px inset;
       --radius: 18px;
-      --max: 1160px;
+      --max: 1120px;
       --font-display: 'Source Serif 4', Georgia, serif;
       --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -48,694 +47,210 @@
         radial-gradient(circle at 50% -10%, oklch(78% 0.125 199 / 0.10), transparent 32rem),
         linear-gradient(180deg, oklch(15.5% 0.012 240) 0%, oklch(13.5% 0.011 240) 38%, oklch(15.5% 0.012 240) 100%);
       line-height: 1.55;
-      font-feature-settings: "liga" 1, "kern" 1;
       text-rendering: optimizeLegibility;
     }
 
     a { color: inherit; text-decoration: none; }
     a:hover { color: var(--blue); }
-
     ::selection { background: oklch(78% 0.125 199 / 0.28); color: var(--ink); }
 
     h1, h2 { font-family: var(--font-display); font-weight: 600; }
+    h3 { margin: 0; }
 
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
 
+    /* ---------- Nav ---------- */
     .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
       background: oklch(15.5% 0.012 240 / 0.86);
       backdrop-filter: saturate(180%) blur(18px);
-      box-shadow: oklch(55% 0.02 240 / 0.16) 0 1px 0;
+      box-shadow: var(--line) 0 1px 0;
     }
-
-    .nav-inner {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 650;
-      letter-spacing: -0.04em;
-      white-space: nowrap;
-    }
-
+    .nav-inner { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 650; letter-spacing: -0.03em; white-space: nowrap; }
     .brand-mark {
-      width: 28px;
-      height: 28px;
-      display: grid;
-      place-items: center;
-      border-radius: 9px;
-      color: var(--accent-ink);
-      background: var(--blue);
-      font-size: 13px;
-      font-family: var(--font-mono);
-      box-shadow: var(--shadow-border);
+      width: 28px; height: 28px; display: grid; place-items: center; border-radius: 9px;
+      color: var(--accent-ink); background: var(--blue); font-size: 13px; font-family: var(--font-mono);
     }
+    .nav-links { display: flex; align-items: center; gap: 4px; color: var(--muted); font-size: 14px; font-weight: 500; }
+    .nav-links a { padding: 8px 10px; border-radius: 999px; }
+    .nav-links a:hover { background: var(--surface-tint); color: var(--ink); }
+    .nav-cta { padding: 8px 14px !important; background: var(--blue); color: var(--accent-ink) !important; }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .nav-links a {
-      padding: 8px 10px;
-      border-radius: 999px;
-    }
-
-    .nav-links a:hover {
-      background: var(--surface-tint);
-      color: var(--ink);
-    }
-
-    .nav-cta {
-      padding: 8px 14px !important;
-      background: var(--blue);
-      color: var(--accent-ink) !important;
-      box-shadow: var(--shadow-border);
-    }
-
-    .hero {
-      padding: 86px 0 44px;
-    }
-
+    /* ---------- Hero ---------- */
+    .hero { padding: 72px 0 64px; }
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--blue-soft);
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 550;
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px;
+      background: var(--blue-soft); color: var(--blue); font-size: 13px; font-weight: 550;
       box-shadow: oklch(78% 0.125 199 / 0.22) 0 0 0 1px inset;
     }
-
     .eyebrow::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--green);
+      content: ""; width: 7px; height: 7px; border-radius: 999px; background: var(--green);
       box-shadow: oklch(75% 0.14 155 / 0.3) 0 0 0 4px;
     }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) 380px;
-      gap: 28px;
-      align-items: stretch;
-      margin-top: 28px;
-    }
-
-    h1 {
-      margin: 0;
-      max-width: 850px;
-      font-size: clamp(48px, 8vw, 88px);
-      line-height: 1;
-      letter-spacing: -0.01em;
-      font-weight: 600;
-    }
-
-    .hero-role {
-      margin: 20px 0 0;
-      max-width: 640px;
-      color: var(--muted);
-      font-size: clamp(19px, 2.3vw, 24px);
-      line-height: 1.45;
-      letter-spacing: -0.015em;
-      font-weight: 500;
-    }
-
-    .hero-lede {
-      margin: 24px 0 0;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: clamp(18px, 2.1vw, 22px);
-      line-height: 1.65;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-lede + .hero-lede { margin-top: 14px; }
-
-    .person-link {
-      color: var(--ink);
-      text-decoration: underline;
-      text-decoration-color: var(--blue);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color .15s ease;
-    }
-
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; align-items: center; margin-top: 24px; }
+    h1 { margin: 0; font-size: clamp(46px, 7vw, 80px); line-height: 1; letter-spacing: -0.01em; }
+    .hero-role { margin: 16px 0 0; color: var(--blue); font-family: var(--font-mono); font-size: clamp(14px, 1.6vw, 16px); font-weight: 500; letter-spacing: 0.01em; }
+    .hero-lede { margin: 22px 0 0; max-width: 680px; color: var(--muted); font-size: 18px; line-height: 1.7; }
+    .hero-lede + .hero-lede { margin-top: 12px; }
+    .person-link { color: var(--ink); text-decoration: underline; text-decoration-color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .person-link:hover { color: var(--blue); }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 
     .button {
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 11px 16px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 560;
+      min-height: 42px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px 16px; border-radius: 10px; font-size: 14px; font-weight: 560;
       transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
-
-    .button:hover { transform: translateY(-1px); text-decoration: none; }
-
-    .button-primary {
-      background: var(--blue);
-      color: var(--accent-ink);
-      box-shadow: var(--shadow-card);
-    }
-
+    .button:hover { transform: translateY(-1px); }
+    .button-primary { background: var(--blue); color: var(--accent-ink); box-shadow: var(--shadow-card); }
     .button-primary:hover { color: var(--accent-ink); background: var(--blue-strong); }
-
-    .button-secondary {
-      background: var(--surface);
-      color: var(--ink);
-      box-shadow: var(--shadow-border);
-    }
-
+    .button-secondary { background: var(--surface); color: var(--ink); box-shadow: var(--shadow-border); }
     .button-secondary:hover { color: var(--ink); box-shadow: var(--shadow-card); }
 
-    .hero-panel,
-    .card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-card);
-    }
+    .card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow-card); }
 
-    .hero-panel {
-      padding: 24px;
-      display: grid;
-      gap: 14px;
-      align-content: start;
-      min-height: 100%;
+    .hero-panel { padding: 8px 22px; }
+    .panel-row { padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .panel-row:last-child { border-bottom: 0; }
+    .label {
+      display: block; margin-bottom: 5px; color: var(--soft); font-family: var(--font-mono);
+      font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
     }
+    .panel-row p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .panel-row p strong { color: var(--ink); font-weight: 560; }
 
-    .panel-title {
-      margin: 0 0 6px;
-      color: var(--soft);
-      font-family: var(--font-mono);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .signal {
-      padding: 16px;
-      border-radius: 14px;
-      background: linear-gradient(180deg, oklch(20.5% 0.013 240), oklch(18.5% 0.012 240));
-      box-shadow: var(--shadow-border);
-    }
-
-    .signal strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 15px;
-      letter-spacing: -0.02em;
-    }
-
-    .signal span {
-      display: block;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-    }
-
-    .section {
-      padding: 72px 0;
-    }
-
-    .section + .section {
-      border-top: 1px solid var(--line);
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      gap: 42px;
-      margin-bottom: 28px;
-    }
-
+    /* ---------- Sections ---------- */
+    .section { padding: 64px 0; border-top: 1px solid var(--line); }
+    .section-head { margin-bottom: 28px; max-width: 720px; }
     .kicker {
-      margin: 0;
-      color: var(--blue);
-      font-family: var(--font-mono);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+      margin: 0 0 8px; color: var(--blue); font-family: var(--font-mono);
+      font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
     }
+    h2 { margin: 0; font-size: clamp(28px, 3.2vw, 36px); line-height: 1.2; }
+    .section-copy { margin: 10px 0 0; color: var(--muted); font-size: 16px; }
 
-    h2 {
-      margin: 0;
-      font-size: clamp(30px, 3.8vw, 46px);
-      line-height: 1.18;
-      letter-spacing: -0.005em;
-      font-weight: 600;
-    }
-
-    .section-copy {
-      margin: 14px 0 0;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-      letter-spacing: -0.015em;
-    }
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 360px;
-      gap: 22px;
-    }
-
-    .about-card { padding: 30px; }
-
-    .about-card p {
-      margin: 0 0 36px;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .about-card p:last-child { margin-bottom: 0; }
-
-    .focus-list {
-      display: grid;
-      gap: 12px;
-      align-content: space-between;
-    }
-
-    .focus-item {
-      padding: 18px;
-      border-radius: 16px;
-      background: var(--surface-soft);
-      box-shadow: var(--shadow-border);
-    }
-
-    .focus-item strong {
-      display: block;
-      margin-bottom: 6px;
-      letter-spacing: -0.03em;
-    }
-
-    .focus-item span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .project-card {
-      position: relative;
-      padding: 26px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-height: 390px;
-    }
-
-    .project-card.featured {
-      grid-column: 1 / -1;
-      min-height: 360px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .project-topline {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: start;
-      margin-bottom: 18px;
-    }
-
+    /* ---------- Pills & chips ---------- */
     .pill {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: var(--blue-soft);
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 560;
-      box-shadow: oklch(78% 0.125 199 / 0.2) 0 0 0 1px inset;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; padding: 4px 9px; border-radius: 999px;
+      background: var(--blue-soft); color: var(--blue); font-size: 12px; font-weight: 560;
+      box-shadow: oklch(78% 0.125 199 / 0.2) 0 0 0 1px inset; white-space: nowrap;
     }
-
     .pill.neutral { background: var(--surface-soft); color: var(--muted); box-shadow: var(--shadow-border); }
     .pill.green { background: oklch(75% 0.14 155 / 0.12); color: var(--green); box-shadow: oklch(75% 0.14 155 / 0.22) 0 0 0 1px inset; }
     .pill.purple { background: oklch(72% 0.11 300 / 0.12); color: var(--purple); box-shadow: oklch(72% 0.11 300 / 0.22) 0 0 0 1px inset; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
 
-    .experience-item h3 {
-      margin: 0;
-      font-size: 26px;
-      line-height: 1.12;
-      letter-spacing: -0.045em;
-      font-weight: 650;
-    }
-
-    .project-card h3 {
-      margin: 0;
-      font-family: var(--font-mono);
-      font-size: 21px;
-      line-height: 1.2;
-      letter-spacing: -0.005em;
-      font-weight: 600;
-    }
-
-    .project-subtitle {
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .outcomes {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .outcome {
-      padding: 13px;
-      border-radius: 12px;
-      background: var(--surface-soft);
-      box-shadow: var(--shadow-border);
-    }
-
-    .outcome b {
-      display: block;
-      font-family: var(--font-mono);
-      color: var(--blue);
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0;
-    }
-
-    .outcome span {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.25;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-      padding-top: 20px;
-    }
-
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .project-link {
-      min-height: 38px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 10px;
-      background: var(--surface);
-      color: var(--ink);
-      font-size: 13px;
-      font-weight: 560;
-      box-shadow: var(--shadow-border);
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-
-    .project-link:hover {
-      color: var(--ink);
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-card);
-    }
-
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
     .tech {
-      padding: 6px 9px;
-      border-radius: 8px;
-      color: var(--muted);
-      background: var(--surface-soft);
-      font-family: var(--font-mono);
-      font-size: 12px;
-      box-shadow: var(--shadow-border);
+      padding: 4px 8px; border-radius: 7px; color: var(--muted); background: var(--surface-soft);
+      font-family: var(--font-mono); font-size: 12px; box-shadow: var(--shadow-border);
     }
 
-    .project-visual {
-      min-height: 100%;
-      border-radius: 16px;
-      background:
-        linear-gradient(145deg, oklch(78% 0.125 199 / 0.16), oklch(72% 0.11 300 / 0.08)),
-        var(--surface-soft);
-      box-shadow: var(--shadow-border);
-      padding: 18px;
-      display: grid;
-      gap: 12px;
-      align-content: center;
-    }
+    /* ---------- Project cards ---------- */
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .project-card { padding: 26px; display: flex; flex-direction: column; }
+    .project-card h3 { margin-top: 16px; font-family: var(--font-mono); font-size: 20px; line-height: 1.25; font-weight: 600; }
+    .summary { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+    .stat-line { margin: 14px 0 0; color: var(--blue); font-family: var(--font-mono); font-size: 13px; }
+    .stat-line span { color: var(--soft); }
 
+    .facts { margin: 18px 0 0; border-top: 1px solid var(--line); }
+    .facts > div { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+    .facts dt { padding-top: 2px; color: var(--soft); font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .facts dd { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.55; }
+
+    .more { margin-top: 14px; }
+    .more summary { width: fit-content; cursor: pointer; color: var(--soft); font-size: 13px; }
+    .more summary:hover { color: var(--blue); }
+    .metric-row { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 8px; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+    .metric-row b { color: var(--ink); font-weight: 600; }
+
+    .card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: auto; padding-top: 22px; }
+    .gh-link {
+      display: inline-flex; align-items: center; gap: 7px; padding: 6px 10px; border-radius: 9px;
+      color: var(--ink); font-size: 13px; font-weight: 560; box-shadow: var(--shadow-border); white-space: nowrap;
+    }
+    .gh-link:hover { color: var(--blue); }
+    .icon { width: 15px; height: 15px; flex: none; }
+
+    /* Featured */
+    .featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr); gap: 32px; }
+    .featured-main { display: flex; flex-direction: column; }
+    .result {
+      margin-top: 20px; padding: 16px 18px; border-radius: 14px; background: var(--surface-soft);
+      box-shadow: oklch(78% 0.125 199 / 0.25) 0 0 0 1px inset;
+      display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+    }
+    .result b { font-family: var(--font-mono); font-size: 26px; font-weight: 600; color: var(--blue); white-space: nowrap; }
+    .result span { color: var(--muted); font-size: 14px; flex: 1; min-width: 200px; }
+    .featured-side { display: grid; gap: 10px; align-content: start; }
     .pipeline-step {
-      display: grid;
-      grid-template-columns: 34px minmax(0, 1fr);
-      gap: 12px;
-      align-items: start;
-      padding: 14px;
-      border-radius: 14px;
-      background: var(--surface);
-      box-shadow: var(--shadow-border);
+      display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 12px; align-items: start;
+      padding: 13px; border-radius: 12px; background: var(--surface-soft); box-shadow: var(--shadow-border);
     }
-
     .step-num {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      background: var(--blue);
-      color: var(--accent-ink);
-      font-family: var(--font-mono);
-      font-size: 13px;
+      width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px;
+      background: var(--blue); color: var(--accent-ink); font-family: var(--font-mono); font-size: 12px;
     }
+    .pipeline-step strong { display: block; font-size: 14px; }
+    .pipeline-step span span { color: var(--muted); font-size: 13px; line-height: 1.4; }
+    .contribution { margin: 6px 0 0; padding: 14px 16px; border-left: 2px solid var(--blue); color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .contribution strong { color: var(--ink); }
 
-    .pipeline-step strong { display: block; margin-bottom: 2px; }
-    .pipeline-step span { color: var(--muted); font-size: 13px; line-height: 1.35; }
+    /* Prototypes */
+    .proto p.summary { font-size: 15px; }
+    .caveat { margin: 12px 0 0; color: var(--soft); font-size: 13.5px; }
 
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
+    /* ---------- Background ---------- */
+    .bg-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 20px; align-items: start; }
+    .col-title { margin: 0 0 12px; color: var(--soft); font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .list-card { padding: 6px 24px; }
+    .entry { padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .entry:last-child { border-bottom: 0; }
+    .entry h3 { font-size: 16px; line-height: 1.35; letter-spacing: -0.01em; font-weight: 600; }
+    .entry p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+    .entry .note { color: var(--soft); font-size: 13.5px; margin-top: 8px; }
+    .entry-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+    .date { color: var(--soft); font-family: var(--font-mono); font-size: 12px; white-space: nowrap; }
 
-    .experience-item {
-      display: grid;
-      grid-template-columns: 270px minmax(0, 1fr);
-      gap: 24px;
-      padding: 24px;
-    }
+    .timeline .entry { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 16px; }
+    .timeline .date { padding-top: 3px; }
+    .role { display: block; margin-bottom: 3px; color: var(--blue); font-size: 12.5px; font-weight: 560; }
 
-    .meta {
-      display: grid;
-      gap: 8px;
-      align-content: start;
-    }
+    .skills-card { margin-top: 20px; padding: 6px 24px; }
+    .skill-row { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .skill-row:last-child { border-bottom: 0; }
+    .skill-row h3 { font-size: 14px; font-weight: 560; color: var(--ink); }
 
-    .org {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-    }
+    /* ---------- Contact ---------- */
+    .contact-card { padding: 34px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; }
+    .contact-links { display: grid; grid-template-columns: repeat(2, auto); gap: 10px; }
+    .contact-links .button-primary { grid-column: 1 / -1; }
 
-    .advisor {
-      color: var(--soft);
-      font-size: 14px;
-      line-height: 1.45;
-    }
-
-    .date {
-      color: var(--soft);
-      font-family: var(--font-mono);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: .02em;
-    }
-
-    .experience-body ul {
-      margin: 14px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .experience-body li { margin: 7px 0; }
-
-    .education-grid,
-    .skills-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-
-    .compact-card {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .compact-card h3 {
-      display: flex;
-      align-items: flex-end;
-      min-height: 2.5em;
-      line-height: 1.25;
-    }
-
-    .compact-card .edu-thesis {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin: 0;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .compact-card h3 {
-      margin: 0 0 8px;
-      font-size: 21px;
-      letter-spacing: -0.04em;
-    }
-
-    .compact-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .skill-group {
-      padding: 22px;
-    }
-
-    .skill-group h3 {
-      margin: 0 0 14px;
-      font-size: 17px;
-      letter-spacing: -0.03em;
-    }
-
-    .skill-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .contact-card {
-      padding: 34px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .contact-card h2 { font-size: clamp(34px, 5vw, 58px); }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-end;
-    }
-
-    .footer {
-      padding: 34px 0 54px;
-      color: var(--soft);
-      font-size: 13px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
-    }
+    .footer { padding: 30px 0 48px; color: var(--soft); font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 20px; }
 
     @media (max-width: 980px) {
-      .hero-grid,
-      .about-layout,
-      .section-heading,
-      .experience-item,
-      .contact-card {
-        grid-template-columns: 1fr;
-      }
-
+      .hero-grid, .featured, .bg-grid, .contact-card { grid-template-columns: 1fr; }
       .hero-panel { max-width: 620px; }
-      .project-card.featured { grid-template-columns: 1fr; }
-      .outcomes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .contact-links { justify-content: flex-start; }
+      .contact-links { justify-content: start; }
     }
 
     @media (max-width: 720px) {
       .container { width: min(100% - 28px, var(--max)); }
-      .nav-inner { align-items: flex-start; flex-direction: column; padding: 14px 0; gap: 12px; }
-      .nav-links { width: 100%; overflow-x: auto; padding-bottom: 2px; }
-      .hero { padding: 54px 0 26px; }
-      h1 { letter-spacing: -0.065em; }
-      .section { padding: 52px 0; }
-      .project-grid,
-      .education-grid,
-      .skills-grid,
-      .contact-grid { grid-template-columns: 1fr; }
-      .project-card { min-height: auto; }
-      .project-topline { flex-direction: column; }
-      .outcomes { grid-template-columns: 1fr 1fr; }
-      .button { width: 100%; }
-      .hero-actions { width: 100%; }
+      .nav-inner { flex-direction: column; align-items: flex-start; padding: 12px 0; gap: 10px; }
+      .nav-links { width: 100%; justify-content: space-between; }
+      .nav-links a { padding: 8px; }
+      .hero { padding: 48px 0 44px; }
+      .hero-lede { font-size: 17px; }
+      .section { padding: 48px 0; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project-card, .contact-card { padding: 22px; }
+      .list-card, .skills-card { padding: 4px 18px; }
+      .facts > div, .timeline .entry, .skill-row { grid-template-columns: 1fr; gap: 6px; }
+      .hero-actions .button { flex: 1 1 calc(50% - 10px); }
+      .contact-links { grid-template-columns: 1fr 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -744,6 +259,10 @@
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol>
+  </svg>
+
   <nav class="nav" aria-label="Primary navigation">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Hongrui Zhu home">
@@ -751,270 +270,227 @@
         <span>Hongrui Zhu</span>
       </a>
       <div class="nav-links">
-        <a href="#work">What I do</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#prototypes">Prototypes</a>
+        <a href="#background">Background</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </div>
     </div>
   </nav>
 
   <main id="top">
-    <header class="hero">
+    <header class="hero" id="about">
       <div class="container">
-        <span class="eyebrow">Open to Machine Learning, AI, and Data Analysis roles</span>
+        <span class="eyebrow">Applying to PhD programs · Fall 2027</span>
         <div class="hero-grid">
           <div>
             <h1>Hongrui Zhu</h1>
-            <p class="hero-role">Machine learning, AI, and data analysis for real-world visual data.</p>
+            <p class="hero-role">Biomedical AI · Medical Image Analysis · LLM Agents</p>
             <p class="hero-lede">
-              A Biomedical Informatics M.S. graduate from Stony Brook University. I build and evaluate machine learning systems across computer vision, biomedical imaging, and data analysis.
+              I earned my M.S. in Biomedical Informatics at Stony Brook University, where I worked with <a class="person-link" href="https://chaochen.github.io/" target="_blank" rel="noopener">Prof. Chao Chen</a> on cell segmentation and classification in brain histopathology. I’m interested in how AI systems make predictions from limited evidence and how people can verify those predictions.
             </p>
             <p class="hero-lede">
-              At Stony Brook, I worked with <a class="person-link" href="https://chaochen.github.io/" target="_blank" rel="noopener">Prof. Chao Chen</a> on CellSeg-UNICls, a decoupled cell segmentation and embedding-based classification framework for brain histopathology, and with <a class="person-link" href="https://dormantbiologylab.org/member/chi-kuo-hu/" target="_blank" rel="noopener">Prof. Chi-Kuo Hu</a> in the Dormant Biology Lab on FishLEN, a computer vision system for killifish length estimation.
+              My work includes medical image analysis and prototypes for biomedical question answering and research assistance. I’m applying to PhD programs for Fall 2027.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#projects">View selected work</a>
-              <a class="button button-secondary" href="https://drive.google.com/file/d/1ueltVGtK-Pqd7Lv0R8ciHMoP72eMP4gm/view?usp=drive_link" target="_blank" rel="noopener">Resume PDF</a>
+              <a class="button button-primary" href="#research">Selected Research</a>
+              <a class="button button-secondary" href="Hongrui_Zhu_CV.pdf" target="_blank" rel="noopener">Academic CV (PDF)</a>
+              <a class="button button-secondary" href="mailto:zhuhongrui0917@gmail.com">Email</a>
               <a class="button button-secondary" href="https://github.com/BlackOrnate" target="_blank" rel="noopener">GitHub</a>
-              <a class="button button-secondary" href="https://www.linkedin.com/in/hongruizhu/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
           </div>
 
-          <aside class="hero-panel" aria-label="Profile highlights">
-            <p class="panel-title">Profile snapshot</p>
-            <div class="signal">
-              <strong>Target roles</strong>
-              <span>Machine Learning Engineer · AI Engineer · Data Analyst · Computer Vision Engineer</span>
+          <aside class="card hero-panel" aria-label="Research overview">
+            <div class="panel-row">
+              <span class="label">Background</span>
+              <p><strong>M.S. Biomedical Informatics</strong>, Stony Brook University, 2026 · GPA 3.88 / 4.00</p>
             </div>
-            <div class="signal">
-              <strong>Academic base</strong>
-              <span>M.S. Biomedical Informatics graduate, Stony Brook University · GPA 3.88 / 4.0</span>
+            <div class="panel-row">
+              <span class="label">M.S. thesis</span>
+              <p><strong>CellSeg-UNICls</strong>: decoupled cell segmentation and embedding-based classification for brain histopathology, with Prof. Chao Chen.</p>
             </div>
-            <div class="signal">
-              <strong>Core toolkit</strong>
-              <span>Python · PyTorch · TensorFlow · SQL · Pandas · NumPy · U-Net · ResNet · SAM · LangChain</span>
+            <div class="panel-row">
+              <span class="label">Research interests</span>
+              <p>Medical image analysis and computational pathology · pretrained visual representations · language models and agents for biomedical research.</p>
+              <p style="margin-top:8px;"><strong>I’m interested in designing tools that help domain experts inspect and correct AI outputs.</strong></p>
             </div>
           </aside>
         </div>
       </div>
     </header>
 
-    <section class="section" id="work">
+    <section class="section" id="research">
       <div class="container">
-        <div class="section-heading">
-          <p class="kicker">What I do</p>
-          <div>
-            <h2>Machine learning, AI engineering, and data analysis.</h2>
-            <p class="section-copy">I work across model development, data preparation, and evaluation, spanning machine learning, AI engineering, and data analysis roles.</p>
-          </div>
-        </div>
-        <div class="about-layout">
-          <article class="card about-card">
-            <p>
-              I work on applied ML problems where the model has to survive real data: noisy images, sparse annotations, domain-specific constraints, and evaluation metrics that reflect downstream use.
-            </p>
-            <p>
-              My recent projects include CellSeg-UNICls for brain histopathology cell segmentation and classification, multi-class nuclei instance segmentation on PanNuke, and FishLEN for killifish length estimation. Across these projects, I built training pipelines, reproduced prior methods, integrated segmentation and representation models, engineered features, and evaluated results with task-specific metrics.
-            </p>
-            <p>
-              I’m currently seeking full-time opportunities in machine learning, AI, computer vision, and data analysis roles.
-            </p>
-          </article>
-          <div class="focus-list">
-            <div class="focus-item"><strong>Machine learning & computer vision</strong><span>Segmentation, classification, regression, feature extraction, and deep learning model development.</span></div>
-            <div class="focus-item"><strong>AI systems & applied tooling</strong><span>Experience with PyTorch/TensorFlow workflows plus Ollama, LangChain, RAG, and AI-agent tooling.</span></div>
-            <div class="focus-item"><strong>Data analysis & evaluation</strong><span>NumPy, Pandas, feature engineering, model evaluation, and metrics including Dice, AJI, PQ, macro-F1, weighted-F1, and regression error.</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="education">
-      <div class="container">
-        <div class="section-heading">
-          <p class="kicker">Education</p>
-          <div>
-            <h2>Biomedical informatics, mathematics, and software engineering.</h2>
-          </div>
-        </div>
-        <div class="education-grid">
-          <article class="card compact-card">
-            <div>
-              <div class="pill-row">
-                <span class="pill">Master's Degree</span>
-                <span class="pill neutral">GPA 3.88 / 4.0</span>
-              </div>
-              <h3 style="margin-top:16px;">M.S. in Biomedical Informatics</h3>
-              <p>Stony Brook University · Stony Brook, NY · Sep 2024 — May 2026</p>
-            </div>
-            <div class="edu-thesis"><p>Thesis: CellSeg-UNICls: Decoupled Segmentation and Embedding-based Cell Classification for Brain Histopathology.</p></div>
-          </article>
-          <article class="card compact-card">
-            <div>
-              <div class="pill-row">
-                <span class="pill">Bachelor's Degree</span>
-                <span class="pill neutral">GPA 3.3 / 4.0</span>
-                <span class="pill neutral">Double major</span>
-              </div>
-              <h3 style="margin-top:16px;">B.S. in Mathematics and Applied Mathematics, and Software Engineering</h3>
-              <p>Dalian Jiaotong University · Dalian, China · Sep 2019 — Jun 2024</p>
-            </div>
-            <div class="edu-thesis"><p>Math Thesis: Discussion on Methods for Solving Linear Programming Problems.<br>Software Thesis: Neural Network Algorithm for Cancer Cell (Melanoma) Detection based on Image Data.<br>Both received University-Level Outstanding Thesis recognition.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-heading">
-          <p class="kicker">Selected projects</p>
-          <div>
-            <h2>Projects in computer vision and biomedical imaging.</h2>
-            <p class="section-copy">Each project below includes the problem, technical approach, and results.</p>
-          </div>
+        <div class="section-head">
+          <p class="kicker">Selected research</p>
+          <h2>Medical image analysis with limited expert labels</h2>
         </div>
 
         <div class="project-grid">
           <article class="card project-card featured">
-            <div>
-              <div class="project-topline">
-                <span class="pill">Computational Pathology</span>
-                <span class="pill neutral">Graduation Project</span>
-              </div>
+            <div class="featured-main">
+              <div class="pill-row"><span class="pill">Computational Pathology</span><span class="pill neutral">M.S. Thesis</span></div>
               <h3>CellSeg-UNICls</h3>
-              <p class="project-subtitle">A decoupled framework for cell instance segmentation and embedding-based cell classification in brain histopathology images.</p>
-              <div class="outcomes" aria-label="CellSeg-UNICls results">
-                <div class="outcome"><b>0.863</b><span>Dice</span></div>
-                <div class="outcome"><b>0.555</b><span>mPQ</span></div>
-                <div class="outcome"><b>0.933</b><span>weighted-F1</span></div>
-                <div class="outcome"><b>0.747</b><span>macro-F1</span></div>
+              <p class="summary">Decoupled cell instance segmentation and embedding-based cell classification for brain histopathology.</p>
+              <div class="result">
+                <b>0.57 → 0.75</b>
+                <span>macro F1 after replacing the classifier, with Cellpose-SAM segmentation held fixed.</span>
               </div>
-              <div class="tech-stack">
-                <span class="tech">Cellpose-SAM</span><span class="tech">UNI2</span><span class="tech">MLP</span><span class="tech">QuPath</span><span class="tech">PyTorch</span>
-              </div>
-              <div class="project-links">
-                <a class="project-link" href="https://github.com/BlackOrnate/CellSeg-UNICls" target="_blank" rel="noopener">GitHub</a>
+              <dl class="facts">
+                <div><dt>Problem</dt><dd>Joint segmentation-and-classification models were limited by segmentation quality, and expert labels existed only as points.</dd></div>
+                <div><dt>Data</dt><dd>6 patients · 48 image patches · 13,697 annotated instances.</dd></div>
+                <div><dt>Limitation</dt><dd>Small dataset with no external validation cohort yet.</dd></div>
+              </dl>
+              <details class="more">
+                <summary>Other metrics</summary>
+                <div class="metric-row"><span>Dice <b>0.863</b></span><span>mPQ <b>0.555</b></span><span>weighted F1 <b>0.933</b></span><span>macro F1 <b>0.747</b></span></div>
+              </details>
+              <div class="card-foot">
+                <div class="chips"><span class="tech">Cellpose-SAM</span><span class="tech">UNI2</span><span class="tech">MLP</span><span class="tech">QuPath</span><span class="tech">PyTorch</span></div>
+                <a class="gh-link" href="https://github.com/BlackOrnate/CellSeg-UNICls" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>GitHub</a>
               </div>
             </div>
-            <div class="project-visual" aria-hidden="true">
-              <div class="pipeline-step"><span class="step-num">01</span><span><strong>Sparse annotation</strong><span>QuPath / SAM-assisted labels from limited point annotations.</span></span></div>
-              <div class="pipeline-step"><span class="step-num">02</span><span><strong>Instance segmentation</strong><span>Cellpose-SAM identifies cell instances in brain histopathology images.</span></span></div>
-              <div class="pipeline-step"><span class="step-num">03</span><span><strong>Embedding classification</strong><span>UNI2 features feed an MLP classifier for cell type prediction.</span></span></div>
+            <div class="featured-side">
+              <span class="label">Pipeline</span>
+              <div class="pipeline-step"><span class="step-num">01</span><span><strong>Expert annotation</strong><span>Point labels converted to instance masks with the QuPath SAM extension.</span></span></div>
+              <div class="pipeline-step"><span class="step-num">02</span><span><strong>Instance segmentation</strong><span>Cellpose-SAM detects and outlines each cell.</span></span></div>
+              <div class="pipeline-step"><span class="step-num">03</span><span><strong>Embedding classification</strong><span>Frozen UNI2 embeddings feed a separate MLP classifier.</span></span></div>
+              <p class="contribution"><strong>My contribution:</strong> I converted expert point annotations into instance masks, revised them over several rounds of expert review, and built the pipeline that separates segmentation from classification.</p>
             </div>
           </article>
 
           <article class="card project-card">
-            <div class="project-topline"><span class="pill purple">Instance Segmentation</span><span class="pill neutral">PanNuke</span></div>
-            <h3>MCV — Multi-Class Nuclei Instance Segmentation</h3>
-            <p class="project-subtitle">Built a PanNuke nuclei segmentation pipeline with ResNet50 U-Net, binary mask prediction, HoVer-map regression, and PyTorch DistributedDataParallel for multi-GPU training.</p>
-            <div class="outcomes">
-              <div class="outcome"><b>0.859</b><span>Dice</span></div>
-              <div class="outcome"><b>0.738</b><span>AJI</span></div>
-              <div class="outcome"><b>0.716</b><span>PQ</span></div>
-              <div class="outcome"><b>0.747</b><span>AJI+</span></div>
-            </div>
-            <div class="tech-stack"><span class="tech">PyTorch</span><span class="tech">U-Net</span><span class="tech">ResNet50</span><span class="tech">DDP</span><span class="tech">HoVer-map</span></div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/BlackOrnate/MCV" target="_blank" rel="noopener">GitHub</a>
+            <div class="pill-row"><span class="pill green">Biological Imaging</span><span class="pill neutral">Student Project</span></div>
+            <h3>FishLEN</h3>
+            <p class="summary">Killifish length estimation from raw laboratory images, Dormant Biology Lab.</p>
+            <p class="stat-line">203 images <span>·</span> 163 train <span>/</span> 40 validation</p>
+            <dl class="facts">
+              <div><dt>Problem</dt><dd>Measure fish body length automatically instead of by hand.</dd></div>
+              <div><dt>My role</dt><dd>Built the whole pipeline independently: data organization, mask selection from SAM candidates, U-Net (ResNet34) segmentation, and ResNet18 + MLP length regression.</dd></div>
+              <div><dt>Limitation</dt><dd>Single-lab dataset with one train/validation split and no held-out test set.</dd></div>
+            </dl>
+            <div class="card-foot">
+              <div class="chips"><span class="tech">PyTorch</span><span class="tech">SAM</span><span class="tech">U-Net</span><span class="tech">ResNet</span></div>
+              <a class="gh-link" href="https://github.com/BlackOrnate/FishLEN" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>GitHub</a>
             </div>
           </article>
 
           <article class="card project-card">
-            <div class="project-topline"><span class="pill green">Scientific CV</span><span class="pill neutral">FishLEN</span></div>
-            <h3>Fish Length Net</h3>
-            <p class="project-subtitle">Developed a PyTorch-based system for killifish length estimation using fish segmentation masks, a U-Net with ResNet34 encoder, and a ResNet18 + MLP regression model.</p>
-            <div class="outcomes">
-              <div class="outcome"><b>87.56%</b><span>baseline within 10% error</span></div>
-              <div class="outcome"><b>95.40%</b><span>with metadata features</span></div>
-            </div>
-            <div class="tech-stack"><span class="tech">PyTorch</span><span class="tech">U-Net</span><span class="tech">ResNet34</span><span class="tech">ResNet18</span><span class="tech">Regression</span></div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/BlackOrnate/FishLEN" target="_blank" rel="noopener">GitHub</a>
+            <div class="pill-row"><span class="pill purple">Instance Segmentation</span><span class="pill neutral">Team Course Project</span></div>
+            <h3>MCV: Nuclei Instance Segmentation on PanNuke</h3>
+            <p class="summary">AMS 691 Medical Image Analysis, Stony Brook University.</p>
+            <p class="stat-line">Spring 2025 <span>·</span> PanNuke H&amp;E patches</p>
+            <dl class="facts">
+              <div><dt>Problem</dt><dd>Separate touching nuclei into individual instances.</dd></div>
+              <div><dt>My role</dt><dd>Responsible for the model architecture: design, implementation, and optimization, using binary nuclei-mask prediction and HoVer-map regression.</dd></div>
+              <div><dt>Limitation</dt><dd>Course-project scope; the evaluation setup is still being documented.</dd></div>
+            </dl>
+            <details class="more">
+              <summary>Course-project metrics</summary>
+              <div class="metric-row"><span>Dice <b>0.859</b></span><span>AJI <b>0.738</b></span><span>PQ <b>0.716</b></span><span>AJI+ <b>0.747</b></span></div>
+            </details>
+            <div class="card-foot">
+              <div class="chips"><span class="tech">PyTorch</span><span class="tech">U-Net</span><span class="tech">HoVer-map</span><span class="tech">DDP</span></div>
+              <a class="gh-link" href="https://github.com/BlackOrnate/MCV" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>GitHub</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="experience">
+    <section class="section" id="prototypes">
       <div class="container">
-        <div class="section-heading">
-          <p class="kicker">Experience</p>
-          <div>
-            <h2>Research experience across pathology, biology, and brain science.</h2>
-            <p class="section-copy">Lab context, technical contribution, and outcomes for each role.</p>
-          </div>
+        <div class="section-head">
+          <p class="kicker">AI prototypes</p>
+          <h2>Language model agents for biomedical work</h2>
+          <p class="section-copy">Independent learning projects exploring retrieval and tool use. Both are prototypes, not evaluated systems.</p>
         </div>
 
-        <div class="timeline">
-          <article class="card experience-item">
-            <div class="meta"><span class="pill">Research Internship</span><span class="date">Jun 2025 — May 2026</span><span class="org">Department of Biomedical Informatics · Stony Brook University</span><span class="advisor">with <a class="person-link" href="https://chaochen.github.io/" target="_blank" rel="noopener">Prof. Chao Chen</a></span></div>
-            <div class="experience-body">
-              <h3>Cell segmentation and classification for brain histopathology</h3>
-              <ul>
-                <li>Developed CellSeg-UNICls for cell instance segmentation and classification in brain histopathology images.</li>
-                <li>Built a two-stage pipeline combining Cellpose-SAM segmentation, UNI2 embeddings, and an MLP classifier.</li>
-                <li>Created QuPath/SAM-assisted annotations from sparse point labels to support limited-supervision training.</li>
-                <li>Achieved 0.863 Dice, 0.555 mPQ, 0.933 weighted-F1, and 0.747 macro-F1.</li>
-              </ul>
+        <div class="project-grid">
+          <article class="card project-card proto">
+            <div class="pill-row"><span class="pill purple">LLM Agent</span><span class="pill neutral">Prototype</span></div>
+            <h3>Medical Question Answering Agent</h3>
+            <p class="summary">LangGraph routes each question to visit-history lookup through MCP, FAISS retrieval over example guidelines, or Text-to-SQL over a mock doctor database, using local models through Ollama.</p>
+            <p class="caveat">Uses <strong>simulated records</strong> only; not evaluated on real clinical questions.</p>
+            <div class="card-foot">
+              <div class="chips"><span class="tech">LangGraph</span><span class="tech">MCP</span><span class="tech">FAISS</span><span class="tech">Ollama</span></div>
+              <a class="gh-link" href="https://github.com/BlackOrnate/langgraph-medical-multi-agent" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>GitHub</a>
             </div>
           </article>
 
-          <article class="card experience-item">
-            <div class="meta"><span class="pill green">Research Internship</span><span class="date">Jan 2025 — Jun 2025</span><span class="org">Dormant Biology Lab · Stony Brook University</span><span class="advisor">with <a class="person-link" href="https://dormantbiologylab.org/member/chi-kuo-hu/" target="_blank" rel="noopener">Prof. Chi-Kuo Hu</a></span></div>
-            <div class="experience-body">
-              <h3>Computer vision system for fish length estimation</h3>
-              <ul>
-                <li>Developed FishLEN, a PyTorch-based computer vision system for killifish length estimation.</li>
-                <li>Used fish segmentation masks to support accurate length regression.</li>
-                <li>Improved predictions within 10% error from 87.56% to 95.40% using metadata features.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card experience-item">
-            <div class="meta"><span class="pill purple">Research Internship</span><span class="date">Nov 2024 — Dec 2024</span><span class="org">Department of Biomedical Informatics · Stony Brook University</span><span class="advisor">with <a class="person-link" href="https://chaochen.github.io/" target="_blank" rel="noopener">Prof. Chao Chen</a></span></div>
-            <div class="experience-body">
-              <h3>Reproduction and analysis of cell segmentation models</h3>
-              <ul>
-                <li>Reviewed and analyzed state-of-the-art cell segmentation and classification models.</li>
-                <li>Reproduced experiments from published work by running Hover-Net GitHub implementations.</li>
-                <li>Visualized extracted features and converted results into QuPath-compatible datasets.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card experience-item">
-            <div class="meta"><span class="pill neutral">Research Internship</span><span class="date">Oct 2023 — Dec 2023</span><span class="org">Center for Innovation in Brain Science · University of Arizona</span><span class="advisor">with <a class="person-link" href="https://pathbiotech.com/leadership" target="_blank" rel="noopener">Prof. Rui Chang</a></span></div>
-            <div class="experience-body">
-              <h3>TensorFlow migration and pipeline refactoring</h3>
-              <ul>
-                <li>Migrated a TensorFlow v1 codebase to TensorFlow v2, improving maintainability and stability.</li>
-                <li>Refactored training pipelines and removed approximately 20% redundant operations.</li>
-                <li>Reduced runtime and memory consumption by approximately 10%.</li>
-              </ul>
+          <article class="card project-card proto">
+            <div class="pill-row"><span class="pill green">Research Assistant</span><span class="pill neutral">Prototype</span></div>
+            <h3>AI Research Workspace</h3>
+            <p class="summary">Connects OpenAlex paper search, FAISS retrieval over sample papers, MCP note lookup, and concept explanation, then merges the routed outputs into one response.</p>
+            <p class="caveat">Built on sample material; output quality not yet systematically evaluated.</p>
+            <div class="card-foot">
+              <div class="chips"><span class="tech">OpenAlex</span><span class="tech">FAISS</span><span class="tech">MCP</span><span class="tech">LangChain</span></div>
+              <a class="gh-link" href="https://github.com/BlackOrnate/AI-Research-Workspace" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>GitHub</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="skills">
+    <section class="section" id="background">
       <div class="container">
-        <div class="section-heading">
-          <p class="kicker">Skills</p>
+        <div class="section-head">
+          <p class="kicker">Education &amp; experience</p>
+          <h2>Biomedical informatics, mathematics, and software engineering</h2>
+        </div>
+
+        <div class="bg-grid">
           <div>
-            <h2>A practical toolkit for ML, AI, and data analysis workflows.</h2>
+            <p class="col-title">Education</p>
+            <div class="card list-card">
+              <div class="entry">
+                <div class="entry-top"><span class="pill">M.S.</span><span class="date">2024 — 2026</span></div>
+                <h3>M.S. in Biomedical Informatics</h3>
+                <p>Stony Brook University · GPA 3.88 / 4.00</p>
+                <p class="note">Thesis: CellSeg-UNICls: Decoupled Segmentation and Embedding-based Cell Classification for Brain Histopathology. Advisor: Prof. Chao Chen.</p>
+              </div>
+              <div class="entry">
+                <div class="entry-top"><span class="pill">B.Sc. + B.Eng.</span><span class="date">2019 — 2024</span></div>
+                <h3>B.Sc. in Mathematics and Applied Mathematics; B.Eng. in Software Engineering</h3>
+                <p>Dalian Jiaotong University · Weighted average 84.58 / 100</p>
+                <p class="note">Two theses, on linear programming methods and neural-network melanoma detection; both received the Outstanding Undergraduate Thesis Award.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="col-title">Research experience</p>
+            <div class="card list-card timeline">
+              <div class="entry">
+                <span class="date">Sep 2026 — Now</span>
+                <div><span class="role">Research Assistant</span><h3>Dormant Biology Lab, Stony Brook University</h3><p>with <a class="person-link" href="https://dormantbiologylab.org/member/chi-kuo-hu/" target="_blank" rel="noopener">Prof. Chi-Kuo Hu</a></p></div>
+              </div>
+              <div class="entry">
+                <span class="date">Jun 2025 — May 2026</span>
+                <div><span class="role">M.S. Thesis Research</span><h3>Biomedical Informatics, Stony Brook University</h3><p>with <a class="person-link" href="https://chaochen.github.io/" target="_blank" rel="noopener">Prof. Chao Chen</a></p><p class="note">Since graduating, I have continued working with Prof. Chen on revising the pathology annotations and analyzing results.</p></div>
+              </div>
+              <div class="entry">
+                <span class="date">Jan — Jun 2025</span>
+                <div><span class="role">Student Project · FishLEN</span><h3>Dormant Biology Lab, Stony Brook University</h3><p>with <a class="person-link" href="https://dormantbiologylab.org/member/chi-kuo-hu/" target="_blank" rel="noopener">Prof. Chi-Kuo Hu</a></p></div>
+              </div>
+              <div class="entry">
+                <span class="date">Nov — Dec 2024</span>
+                <div><span class="role">Research Project</span><h3>Biomedical Informatics, Stony Brook University</h3><p>with <a class="person-link" href="https://chaochen.github.io/" target="_blank" rel="noopener">Prof. Chao Chen</a></p></div>
+              </div>
+              <div class="entry">
+                <span class="date">Oct — Dec 2023</span>
+                <div><span class="role">Student Research</span><h3>Center for Innovation in Brain Science, University of Arizona</h3><p>Remote · with <a class="person-link" href="https://pathbiotech.com/leadership" target="_blank" rel="noopener">Prof. Rui Chang</a></p><p class="note">Migrated a melanoma image-analysis workflow from TensorFlow 1 to TensorFlow 2 and optimized the training pipeline.</p></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="skills-grid">
-          <div class="card skill-group"><h3>Programming</h3><div class="skill-cloud"><span class="tech">Python</span><span class="tech">Java</span><span class="tech">C</span><span class="tech">SQL</span><span class="tech">MATLAB</span></div></div>
-          <div class="card skill-group"><h3>Machine Learning</h3><div class="skill-cloud"><span class="tech">PyTorch</span><span class="tech">TensorFlow</span><span class="tech">CNN</span><span class="tech">ResNet</span><span class="tech">U-Net</span><span class="tech">MLP</span><span class="tech">SAM</span></div></div>
-          <div class="card skill-group"><h3>Computer Vision & Analysis</h3><div class="skill-cloud"><span class="tech">Image Segmentation</span><span class="tech">Instance Segmentation</span><span class="tech">Computational Pathology</span><span class="tech">Feature Engineering</span><span class="tech">Model Evaluation</span></div></div>
-          <div class="card skill-group"><h3>Tools & AI Systems</h3><div class="skill-cloud"><span class="tech">Git</span><span class="tech">GitHub</span><span class="tech">QuPath</span><span class="tech">MySQL</span><span class="tech">SQL Server</span><span class="tech">Ollama</span><span class="tech">LangChain</span><span class="tech">RAG</span><span class="tech">AI Agents</span></div></div>
+
+        <p class="col-title" style="margin-top:28px;">Skills</p>
+        <div class="card skills-card" id="skills" style="margin-top:0;">
+          <div class="skill-row"><h3>Programming</h3><div class="chips"><span class="tech">Python</span><span class="tech">Java</span><span class="tech">C</span><span class="tech">SQL</span><span class="tech">MATLAB</span></div></div>
+          <div class="skill-row"><h3>Deep learning &amp; computing</h3><div class="chips"><span class="tech">PyTorch</span><span class="tech">TensorFlow</span><span class="tech">NumPy</span><span class="tech">Pandas</span><span class="tech">SciPy</span><span class="tech">OpenCV</span><span class="tech">scikit-image</span><span class="tech">Matplotlib</span></div></div>
+          <div class="skill-row"><h3>Image analysis &amp; development</h3><div class="chips"><span class="tech">QuPath</span><span class="tech">Cell segmentation</span><span class="tech">Cell classification</span><span class="tech">Git</span><span class="tech">Linux</span></div></div>
+          <div class="skill-row"><h3>Agent tools</h3><div class="chips"><span class="tech">LangGraph</span><span class="tech">LangChain</span><span class="tech">Ollama</span><span class="tech">FAISS</span><span class="tech">MCP</span><span class="tech">Text-to-SQL</span></div></div>
         </div>
       </div>
     </section>
@@ -1024,14 +500,15 @@
         <div class="card contact-card">
           <div>
             <p class="kicker">Contact</p>
-            <h2>Get in touch.</h2>
-            <p class="section-copy">I’m happy to connect about full-time opportunities, research collaborations, and applied machine learning projects.</p>
+            <h2>Get in touch</h2>
+            <p class="section-copy">I’m applying to PhD programs for Fall 2027 and would be glad to hear from faculty working on medical image analysis, biomedical AI, or tools for verifying AI outputs. The Academic CV is for PhD applications; the Resume is for industry roles.</p>
           </div>
           <div class="contact-links">
             <a class="button button-primary" href="mailto:zhuhongrui0917@gmail.com">Email me</a>
+            <a class="button button-secondary" href="Hongrui_Zhu_CV.pdf" target="_blank" rel="noopener">Academic CV (PDF)</a>
+            <a class="button button-secondary" href="https://drive.google.com/file/d/1ueltVGtK-Pqd7Lv0R8ciHMoP72eMP4gm/view?usp=drive_link" target="_blank" rel="noopener">Resume (PDF)</a>
             <a class="button button-secondary" href="https://github.com/BlackOrnate" target="_blank" rel="noopener">GitHub</a>
             <a class="button button-secondary" href="https://www.linkedin.com/in/hongruizhu/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="button button-secondary" href="https://drive.google.com/file/d/1ueltVGtK-Pqd7Lv0R8ciHMoP72eMP4gm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a>
           </div>
         </div>
       </div>
@@ -1041,7 +518,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <span>© 2026 Hongrui Zhu.</span>
-      <span>Stony Brook, NY · Machine Learning · Computer Vision · Biomedical Informatics</span>
+      <span>Stony Brook, NY · Biomedical AI · Medical Image Analysis · LLM Agents</span>
     </div>
   </footer>
 </body>
